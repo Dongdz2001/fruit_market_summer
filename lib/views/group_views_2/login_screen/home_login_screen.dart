@@ -90,7 +90,7 @@ class HomeLoginScreen extends StatelessWidget {
                           color: Colors.grey,
                         )),
                     child: SizedBox(
-                      width: 130,
+                      width: 135,
                       height: 45,
                       child: Row(
                         children: [
@@ -117,7 +117,7 @@ class HomeLoginScreen extends StatelessWidget {
                           color: Colors.grey,
                         )),
                     child: SizedBox(
-                      width: 130,
+                      width: 135,
                       height: 45,
                       child: Row(
                         children: [

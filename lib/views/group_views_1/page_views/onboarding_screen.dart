@@ -41,20 +41,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Positioned(
             left: 318,
             top: 90,
-            child: Text(
-              "Skips",
-              style: TextStyle(
-                fontSize: 14,
-                fontFamily: "poppins",
-                color: Color(0xFF898989),
+            child: GestureDetector(
+              child: Text(
+                "Skips",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: "poppins",
+                  color: Color(0xFF898989),
+                ),
               ),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => HomeLoginScreen()));
+              },
             ),
-          ),
-          GestureDetector(
-            child: const Text('Skips'),
-            onTap: () {
-              // _controllerPage.jumpToPage(3);
-            },
           ),
           Container(
             alignment: Alignment(0, 0.7),

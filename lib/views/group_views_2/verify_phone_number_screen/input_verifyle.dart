@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/loading_verifyle.dart';
+import 'package:fruit_market_summer/views/widget_custom/keyborad.dart';
 
 class InputVerifyle extends StatelessWidget {
   const InputVerifyle({Key? key}) : super(key: key);
@@ -61,7 +62,10 @@ class InputVerifyle extends StatelessWidget {
                   width: 335,
                   height: 52,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => LoadingVerifyle()));
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF69A03A),
                         shape: new RoundedRectangleBorder(
@@ -74,162 +78,7 @@ class InputVerifyle extends StatelessWidget {
                       )),
                 ),
               ),
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/1.png"),
-                        onTap: () {
-                          _edtNumberController.text += "1";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 50),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/2.png"),
-                        onTap: () {
-                          _edtNumberController.text += "2";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 50),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/3.png"),
-                        onTap: () {
-                          _edtNumberController.text += "3";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/4.png"),
-                        onTap: () {
-                          _edtNumberController.text += "4";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 50),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/5.png"),
-                        onTap: () {
-                          _edtNumberController.text += "5";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 50),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/6.png"),
-                        onTap: () {
-                          _edtNumberController.text += "6";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/7.png"),
-                        onTap: () {
-                          _edtNumberController.text += "7";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 50),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/8.png"),
-                        onTap: () {
-                          _edtNumberController.text += "8";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 50),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/9.png"),
-                        onTap: () {
-                          _edtNumberController.text += "9";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child: Image.asset(
-                            "assets/image_keyboard_button/delete.png"),
-                        onTap: () {
-                          _edtNumberController.text = _edtNumberController.text
-                              .substring(
-                                  0, _edtNumberController.text.length - 1);
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 70),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/0.png"),
-                        onTap: () {
-                          _edtNumberController.text += "0";
-                          _edtNumberController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _edtNumberController.text.length));
-                        },
-                      ),
-                      SizedBox(width: 70),
-                      GestureDetector(
-                        child:
-                            Image.asset("assets/image_keyboard_button/ok.png"),
-                        onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (_) => LoadingVerifyle()));
-                        },
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              KeyboradCustom.getWidget(_edtNumberController),
             ],
           ),
         ),

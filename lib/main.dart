@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
               fontSize: 14.0,
               fontFamily: "poppins",
               color: Colors.black,
-              fontWeight: FontWeight.w200),
+              fontWeight: FontWeight.w500),
           headline5: TextStyle(
               fontSize: 14.0,
               fontFamily: "poppins",

@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   smooth_page_indicator: ^1.0.0
   toggle_switch: ^2.0.1
+  im_animations: ^0.1.2
+  pinput: ^2.2.11
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +69,20 @@ flutter:
     - assets/image_home/
     - assets/icons/
     - assets/image_keyboard_button/
+    - assets/image_food/
+    - assets/image_food/vegetables/mix_vegetables/
+    - assets/image_food/vegetables/organic_vegetables/
+    - assets/image_food/vegetables/mix_vegetables/
+    - assets/image_food/vegetables/allium/
+    - assets/image_food/vegetables/root/
+    - assets/image_food/fruits/melons/
+    - assets/image_food/fruits/mixed_fruit_pack/
+    - assets/image_food/fruits/organic_fruits/
+    - assets/image_food/fruits/stone_fruits/
+    - assets/image_food/dry_fruits/dehiscent_dry_fruits/
+    - assets/image_food/dry_fruits/indehiscent_dry_fruits/
+    - assets/image_food/dry_fruits/kashmiri_dry_fruits/
+    - assets/image_food/dry_fruits/mixed_dry_fruits_pack/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -81,9 +98,26 @@ flutter:
   fonts:
     - family: poppins
       fonts:
-        - asset: lib/fonts/poppins_font/Poppins-Black.ttf
-        - asset: lib/fonts/poppins_font/Poppins-Italic.ttf
-        - asset: lib/fonts/poppins_font/Poppins-Light.ttf
+        # - asset: - asset: fonts/poppins_font/Poppins-Black.ttf
+        # - asset: - asset: fonts/poppins_font/Poppins-Italic.ttf
+        # - asset: - asset: fonts/poppins_font/Poppins-Light.ttf
+        - asset: fonts/poppins_font/Poppins-BlackItalic.ttf
+        - asset: fonts/poppins_font/Poppins-Bold.ttf
+        - asset: fonts/poppins_font/Poppins-BoldItalic.ttf
+        - asset: fonts/poppins_font/Poppins-ExtraBold.ttf
+        - asset: fonts/poppins_font/Poppins-ExtraBoldItalic.ttf
+        - asset: fonts/poppins_font/Poppins-ExtraLight.ttf
+        - asset: fonts/poppins_font/Poppins-ExtraLightItalic.ttf
+        - asset: fonts/poppins_font/Poppins-Italic.ttf
+        - asset: fonts/poppins_font/Poppins-Light.ttf
+        - asset: fonts/poppins_font/Poppins-LightItalic.ttf
+        - asset: fonts/poppins_font/Poppins-Medium.ttf
+        - asset: fonts/poppins_font/Poppins-MediumItalic.ttf
+        - asset: fonts/poppins_font/Poppins-Regular.ttf
+        - asset: fonts/poppins_font/Poppins-SemiBold.ttf
+        - asset: fonts/poppins_font/Poppins-SemiBoldItalic.ttf
+        - asset: fonts/poppins_font/Poppins-Thin.ttf
+        - asset: fonts/poppins_font/Poppins-ThinItalic.ttf
   #       - asset: fonts/Schyler-Italic.ttf
           style: italic
   #   - family: Trajan Pro
