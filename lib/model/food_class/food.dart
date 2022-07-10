@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Food {
   late String _name;
   late String _type;
@@ -5,6 +7,22 @@ class Food {
   late int _price;
   double _ratingQuantity = 0;
   bool _favoutite = false;
+  List<String> _nutrition = [
+    "Fiber",
+    "Potassium",
+    "Iron",
+    "Magnesium",
+    "Vitamin C",
+    "Vitamin K",
+    "Vitamin E",
+    "Phosphorous"
+  ];
+  String introProduct = """ 
+  Grapes will provide natural nutrients. The  Chemical 
+in organic grapes which can be healthier hair and 
+skin. It can be improve Your heart health. Protect your
+body from Cancer.
+  """;
 
   // get set name
   get getName => this._name;
@@ -31,5 +49,24 @@ class Food {
   get getFavoutite => this._favoutite;
   set setFavoutite(bool value) => this._favoutite = value;
 
+  // get and set list nutrition
+  get getNutrition => this._nutrition;
+  set setNutrition(List<String> value) => this._nutrition = value;
+
+  // get set introduction product
+  get geIntroProduct => this.introProduct;
+  void setIntroProduct(String value) => this.introProduct = value;
+
+  // get set ItemNutition
+  bool isValidItemNutition(int index) => _nutrition.length > index;
+  String getItemNutition(int index) => isValidItemNutition(index)
+      ? this._nutrition[index]
+      : "Error invalid item";
+  void setItemNutrition(int index, String value) => isValidItemNutition(index)
+      ? this._nutrition[index] = value
+      : print("Error invalid item");
+
+  // contructor for Food object
   Food(this._name, this._type, this._imageSrc, this._price);
+  // Food(this._name, this._type, this._imageSrc, this._price, this._nutrition);
 }

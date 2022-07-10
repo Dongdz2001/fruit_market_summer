@@ -41,7 +41,13 @@ class MyApp extends StatelessWidget {
               fontFamily: "poppins",
               color: Color(0xFF909090),
               fontWeight: FontWeight.w500),
-          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+          headline6: TextStyle(
+              fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),
+          bodyText1: TextStyle(
+              fontSize: 14.0,
+              fontFamily: "poppins",
+              color: Colors.white,
+              fontWeight: FontWeight.w500),
         ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),

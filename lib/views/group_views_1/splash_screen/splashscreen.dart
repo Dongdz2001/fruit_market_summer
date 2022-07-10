@@ -46,7 +46,7 @@ class _SlapscreenState extends State<Slapscreen> {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height / 2.01,
+            bottom: -54,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset(

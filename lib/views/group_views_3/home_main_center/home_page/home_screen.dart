@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/dry_fruits_pageviews.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/fruits_pageviews.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/vegetables_pageviews.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen>
               Padding(
                 padding: const EdgeInsets.only(bottom: 40),
                 child: Container(
-                  height: 30,
+                  height: 40,
                   color: Color(0xFF69A03A),
                 ),
               ),
@@ -97,24 +99,8 @@ class _HomeScreenState extends State<HomeScreen>
                       // first tab bar view widget
                       VegetablesPageviews(),
                       // second tab bar view widget
-                      Center(
-                        child: Text(
-                          'Buy Now',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      Center(
-                        child: Text(
-                          'Why Late?',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
+                      FruitsPageviews(),
+                      DryFruitsPageviews()
                     ],
                   ),
                 ),
@@ -125,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen>
 
         //Search listitle
         Positioned(
-          top: 0,
+          top: 10,
           left: 7,
           child: SizedBox(
             width: 380,
@@ -135,14 +121,10 @@ class _HomeScreenState extends State<HomeScreen>
                 minLeadingWidth: 15,
                 leading: new Icon(Icons.search),
                 title: new TextField(
-                  // controller: controller,
                   decoration: new InputDecoration(
                       hintText: 'Search', border: InputBorder.none),
-                  // onChanged: onSearchTextChanged,
                 ),
-                //     onPressed: () {
-                //       // controller.clear();
-                //       // onSearchTextChanged('');
+
                 //     },
                 //   ),
               ),
@@ -153,3 +135,10 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 }
+
+
+// controller: controller,
+  // onChanged: onSearchTextChanged,
+     //     onPressed: () {
+                //       // controller.clear();
+                //       // onSearchTextChanged('');
