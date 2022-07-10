@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/model/icons_custom/my_flutter_app_icons.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/setting_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -113,22 +114,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   )),
               SizedBox(height: 2),
               // Settings
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: 58,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.settings,
-                      size: 32,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'Settings',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
+              InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingScreen())),
+                child: Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    height: 58,
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.settings,
+                        size: 32,
+                        color: Color(0xFF69A03A),
+                      ),
+                      title: Text(
+                        'Settings',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                    )),
+              ),
               SizedBox(height: 2),
               // My Cart
               Container(
@@ -155,10 +160,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   color: Colors.white,
                   height: 58,
                   child: ListTile(
-                    leading: Icon(
-                      Icons.supervisor_account_rounded,
-                      size: 32,
+                    leading: ImageIcon(
+                      AssetImage("assets/icons/rate_us.png"),
                       color: Color(0xFF69A03A),
+                      size: 36,
                     ),
                     title: Text(
                       ' Rate us',

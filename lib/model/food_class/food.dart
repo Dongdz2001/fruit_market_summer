@@ -14,7 +14,7 @@ class Food {
     "Magnesium",
     "Vitamin C",
     "Vitamin K",
-    "Vitamin E",
+    "Zinc",
     "Phosphorous"
   ];
   String introProduct = """ 

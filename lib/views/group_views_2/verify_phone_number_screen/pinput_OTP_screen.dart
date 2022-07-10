@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/enter_basic_info.dart';
-import 'package:fruit_market_summer/views/widget_custom/keyborad.dart';
+import 'package:fruit_market_summer/model/widget_custom/keyborad.dart';
 import 'package:pinput/pinput.dart';
-import 'package:fruit_market_summer/views/widget_custom/keyborad.dart';
 
 class PinputOTPScreen extends StatelessWidget {
   const PinputOTPScreen({Key? key}) : super(key: key);
