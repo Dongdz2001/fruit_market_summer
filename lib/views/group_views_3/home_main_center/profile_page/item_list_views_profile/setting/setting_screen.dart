@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/account_setting/account_setting_screen.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/change_address_setting/change_address_setting_screen.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/language_setting/language_setting_screen.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/notification_setting/notification_setting_screen.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -72,25 +75,35 @@ class SettingScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 2),
                 // Notification
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: EdgeInsets.only(bottom: 8),
-                    color: Colors.white,
-                    height: 70,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.notifications,
-                        size: 32,
-                        color: Color(0xFF69A03A),
-                      ),
-                      title: Text(
-                        'Notification',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    )),
+                InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NotificationSettingScreen())),
+                  child: Container(
+                      alignment: Alignment.bottomCenter,
+                      padding: EdgeInsets.only(bottom: 8),
+                      color: Colors.white,
+                      height: 70,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.notifications,
+                          size: 32,
+                          color: Color(0xFF69A03A),
+                        ),
+                        title: Text(
+                          'Notification',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                ),
                 SizedBox(height: 2),
                 //Language
                 InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LanguageSettingScreen())),
                   child: Container(
                       alignment: Alignment.bottomCenter,
                       padding: EdgeInsets.only(bottom: 8),
@@ -110,27 +123,33 @@ class SettingScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 2),
                 // Change Address
-                Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: EdgeInsets.only(bottom: 8),
-                    color: Colors.white,
-                    height: 70,
-                    child: ListTile(
-                      leading: ImageIcon(
-                        AssetImage("assets/icons/pin_home.png"),
-                        color: Color(0xFF69A03A),
-                        size: 36,
-                      ),
-                      // Icon(
-                      //   Icons.pin,
-                      //   size: 32,
-                      //   color: Color(0xFF69A03A),
-                      // ),
-                      title: Text(
-                        'Change Address',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    )),
+                InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ChangeAddressSettingScreen())),
+                  child: Container(
+                      alignment: Alignment.bottomCenter,
+                      padding: EdgeInsets.only(bottom: 8),
+                      color: Colors.white,
+                      height: 70,
+                      child: ListTile(
+                        leading: ImageIcon(
+                          AssetImage("assets/icons/pin_home.png"),
+                          color: Color(0xFF69A03A),
+                          size: 36,
+                        ),
+                        // Icon(
+                        //   Icons.pin,
+                        //   size: 32,
+                        //   color: Color(0xFF69A03A),
+                        // ),
+                        title: Text(
+                          'Change Address',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                ),
                 SizedBox(height: 2),
               ],
             ),

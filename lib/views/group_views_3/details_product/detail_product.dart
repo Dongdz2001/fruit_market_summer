@@ -66,12 +66,7 @@ class DetailProduct extends StatelessWidget {
                       text: '${tempFood.getName.toString()}\n',
                       style: TextStyle(fontSize: 16),
                     ),
-                    // WidgetSpan(
-                    //   child: Icon(
-                    //     Icons.currency_rupee_rounded,
-                    //     size: 19,
-                    //   ),
-                    // ),
+
                     WidgetSpan(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 5),
