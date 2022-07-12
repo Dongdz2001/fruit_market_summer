@@ -11,6 +11,7 @@ class Food {
   double _rateGeneral = 1 + new Random().nextInt(5).toDouble();
   double _ratingQuantity = 0;
   bool _favoutite = false;
+  int _amount = 0;
   List<String> _nutrition = [
     "Fiber",
     "Potassium",
@@ -27,6 +28,10 @@ in organic grapes which can be healthier hair and
 skin. It can be improve Your heart health. Protect your
 body from Cancer.
   """;
+  // get set _Amount
+  get getAmount => this._amount;
+  set setAmount(int _amount) => this._amount = _amount;
+
   //get set RateGeneral
   get getRateGeneral => this._rateGeneral;
   set setRateGeneral(double value) => this._rateGeneral = value;
@@ -76,6 +81,13 @@ body from Cancer.
   void setItemNutrition(int index, String value) => isValidItemNutition(index)
       ? this._nutrition[index] = value
       : print("Error invalid item");
+
+  // up down Amount in a Food product
+  bool isDefaultAmount() => this._amount > 0;
+  bool isMaxAmount() => this._amount < 50;
+  void upAmount() => isMaxAmount() ? this._amount++ : print("Amount was max");
+  void downAmount() =>
+      isDefaultAmount() ? this._amount-- : print("Amount was min");
 
   // contructor for Food object
   Food(this._name, this._type, this._imageSrc, this._price);

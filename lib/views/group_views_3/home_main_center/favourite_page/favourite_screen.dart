@@ -147,34 +147,55 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
-                                        Container(
-                                          width: 30,
-                                          height: 30,
-                                          padding: EdgeInsets.only(bottom: 10),
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: Colors.grey, width: 2),
-                                            borderRadius:
-                                                BorderRadius.circular(7),
+                                        // button down amount
+                                        InkWell(
+                                          onTap: () => setState(
+                                            () => manish_chutake
+                                                .getItemFavourite(index)
+                                                .downAmount(),
                                           ),
-                                          child: Center(
-                                              child: const Text(
-                                            '__',
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          )),
+                                          child: Container(
+                                            width: 30,
+                                            height: 30,
+                                            padding:
+                                                EdgeInsets.only(bottom: 10),
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.grey, width: 2),
+                                              borderRadius:
+                                                  BorderRadius.circular(7),
+                                            ),
+                                            child: Center(
+                                                child: const Text(
+                                              '__',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            )),
+                                          ),
                                         ),
-                                        const Text('0'),
-                                        Container(
-                                          width: 30,
-                                          height: 30,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: Colors.grey, width: 2),
-                                            borderRadius:
-                                                BorderRadius.circular(7),
+                                        Text(manish_chutake
+                                            .getItemFavourite(index)
+                                            .getAmount
+                                            .toString()),
+                                        // button up amount
+                                        InkWell(
+                                          onTap: () => setState(
+                                            () => manish_chutake
+                                                .getItemFavourite(index)
+                                                .upAmount(),
                                           ),
-                                          child: Center(child: const Text('+')),
+                                          child: Container(
+                                            width: 30,
+                                            height: 30,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.grey, width: 2),
+                                              borderRadius:
+                                                  BorderRadius.circular(7),
+                                            ),
+                                            child:
+                                                Center(child: const Text('+')),
+                                          ),
                                         ),
                                         SizedBox(width: 40),
                                         SizedBox(
