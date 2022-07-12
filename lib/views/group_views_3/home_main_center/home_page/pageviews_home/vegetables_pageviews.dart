@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import 'package:fruit_market_summer/controller/input_data/init_vegetable.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
 import 'package:fruit_market_summer/views/group_views_3/details_product/detail_product.dart';
@@ -90,6 +91,30 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                                       .setFavoutite =
                                                   !listOrganicVegetable[index]
                                                       .getFavoutite;
+                                              if (listOrganicVegetable[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listOrganicVegetable[
+                                                        index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listOrganicVegetable[
+                                                              index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listOrganicVegetable[
@@ -106,10 +131,11 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
                                       initialRating: listOrganicVegetable[index]
-                                          .getRatingQuantity,
+                                          .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
-                                      allowHalfRating: true,
+                                      allowHalfRating: false,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -117,15 +143,15 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                         color: Colors.amber,
                                       ),
                                       onRatingUpdate: (rating) {
-                                        setState(() {
-                                          rating ==
-                                                  listOrganicVegetable[index]
-                                                      .getRatingQuantity
-                                              ? listOrganicVegetable[index]
-                                                  .setRatingQuantity = 0
-                                              : listOrganicVegetable[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listOrganicVegetable[index]
+                                        //               .getRateGeneral
+                                        //       ? listOrganicVegetable[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listOrganicVegetable[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -235,6 +261,30 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                                   !listMixedVegetablesPack[
                                                           index]
                                                       .getFavoutite;
+                                              if (listMixedVegetablesPack[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listMixedVegetablesPack[
+                                                        index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listMixedVegetablesPack[
+                                                              index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(
@@ -252,10 +302,11 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     child: RatingBar.builder(
                                       initialRating:
                                           listMixedVegetablesPack[index]
-                                              .getRatingQuantity,
+                                              .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -264,15 +315,15 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                       onRatingUpdate: (rating) {
                                         print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  listMixedVegetablesPack[index]
-                                                      .getRatingQuantity
-                                              ? listMixedVegetablesPack[index]
-                                                  .setRatingQuantity = 0
-                                              : listMixedVegetablesPack[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listMixedVegetablesPack[index]
+                                        //               .getRateGeneral
+                                        //       ? listMixedVegetablesPack[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listMixedVegetablesPack[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -380,6 +431,28 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                                       .setFavoutite =
                                                   !listAlliumVegetable[index]
                                                       .getFavoutite;
+                                              if (listAlliumVegetable[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listAlliumVegetable[index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listAlliumVegetable[index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listAlliumVegetable[
@@ -396,10 +469,11 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
                                       initialRating: listAlliumVegetable[index]
-                                          .getRatingQuantity,
+                                          .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -408,15 +482,15 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                       onRatingUpdate: (rating) {
                                         print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  listAlliumVegetable[index]
-                                                      .getRatingQuantity
-                                              ? listAlliumVegetable[index]
-                                                  .setRatingQuantity = 0
-                                              : listAlliumVegetable[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listAlliumVegetable[index]
+                                        //               .getRateGeneral
+                                        //       ? listAlliumVegetable[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listAlliumVegetable[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -524,6 +598,28 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                                       .setFavoutite =
                                                   !listRootVegetable[index]
                                                       .getFavoutite;
+                                              if (listRootVegetable[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listRootVegetable[index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listRootVegetable[index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listRootVegetable[
@@ -540,10 +636,11 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     fit: BoxFit.cover,
                                     child: RatingBar.builder(
                                       initialRating: listRootVegetable[index]
-                                          .getRatingQuantity,
+                                          .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -552,15 +649,15 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                       onRatingUpdate: (rating) {
                                         print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  listRootVegetable[index]
-                                                      .getRatingQuantity
-                                              ? listRootVegetable[index]
-                                                  .setRatingQuantity = 0
-                                              : listRootVegetable[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listRootVegetable[index]
+                                        //               .getRateGeneral
+                                        //       ? listRootVegetable[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listRootVegetable[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),

@@ -12,7 +12,19 @@ Food corriander_vegetable = new Food("Corriander", "Organic Vegetable",
 List<Food> listOrganicVegetable = [
   brocol_vegetable,
   brinjels_vegetable,
-  corriander_vegetable
+  corriander_vegetable,
+  brocol_vegetable,
+  brinjels_vegetable,
+  corriander_vegetable,
+  brocol_vegetable,
+  brinjels_vegetable,
+  corriander_vegetable,
+  brocol_vegetable,
+  brinjels_vegetable,
+  corriander_vegetable,
+  brocol_vegetable,
+  brinjels_vegetable,
+  corriander_vegetable,
 ];
 
 // init Mixed Vegetables Pack

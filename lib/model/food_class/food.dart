@@ -1,10 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 
 class Food {
   late String _name;
   late String _type;
   late String _imageSrc;
+  String _delivered = "Delivered on 24 Feb 2021";
   late int _price;
+  double _rateGeneral = 1 + new Random().nextInt(5).toDouble();
   double _ratingQuantity = 0;
   bool _favoutite = false;
   List<String> _nutrition = [
@@ -23,6 +27,13 @@ in organic grapes which can be healthier hair and
 skin. It can be improve Your heart health. Protect your
 body from Cancer.
   """;
+  //get set RateGeneral
+  get getRateGeneral => this._rateGeneral;
+  set setRateGeneral(double value) => this._rateGeneral = value;
+
+  // get set Delivered
+  get getDelivered => this._delivered;
+  set setDelivered(String value) => this._delivered = value;
 
   // get set name
   get getName => this._name;

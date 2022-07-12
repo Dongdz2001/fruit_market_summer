@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import 'package:fruit_market_summer/model/icons_custom/my_flutter_app_icons.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/help/help_screen.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/my_order/my_order_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/setting_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -12,12 +15,14 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 236, 234, 234),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: 173,
+            height: size.height * 0.205,
             width: double.maxFinite,
             decoration: BoxDecoration(
               color: Color(0xFF69A03A),
@@ -36,14 +41,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: new BorderRadius.circular(360.0),
                           child: Image(
                             fit: BoxFit.cover,
-                            image:
-                                AssetImage('assets/image_avatar/robert.webp'),
-                            width: 85.0,
-                            height: 85.0,
+                            image: AssetImage(manish_chutake.getImageSrc),
+                            width: size.width * 0.1,
+                            height: size.width * 0.1,
                           ),
                         ),
-                        width: 87,
-                        height: 87,
+                        width: size.width * 0.18,
+                        height: size.width * 0.18,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(360),
                           color: Colors.white,
@@ -57,17 +61,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         size: 20,
                       ),
                     ),
-                    SizedBox(width: 15),
+                    SizedBox(width: 25),
                   ],
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: size.height * 0.02),
                 Text(
-                  "Manish Chutake",
+                  "${manish_chutake.getName}",
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 SizedBox(height: 6),
                 Text(
-                  "mainshuxuid@gmail.com",
+                  "${manish_chutake.getEmail}",
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
               ],
@@ -78,33 +82,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
             shrinkWrap: true,
             children: <Widget>[
               // My Order
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: 58,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.shopping_bag,
-                      size: 32,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'My Orders',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-              SizedBox(height: 2),
+              InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyOrderScreen())),
+                child: Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    height: size.height * 0.074,
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.shopping_bag,
+                        size: size.width * 0.075,
+                        color: Color(0xFF69A03A),
+                      ),
+                      title: Text(
+                        'My Orders',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                    )),
+              ),
+              SizedBox(height: 1),
               // Favourites
               Container(
                   alignment: Alignment.bottomCenter,
                   padding: EdgeInsets.only(bottom: 8),
                   color: Colors.white,
-                  height: 58,
+                  height: size.height * 0.074,
                   child: ListTile(
                     leading: Icon(
                       Icons.favorite,
-                      size: 32,
+                      size: size.width * 0.075,
                       color: Color(0xFF69A03A),
                     ),
                     title: Text(
@@ -112,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: Theme.of(context).textTheme.headline4,
                     ),
                   )),
-              SizedBox(height: 2),
+              SizedBox(height: 1),
               // Settings
               InkWell(
                 onTap: () => Navigator.push(context,
@@ -121,11 +129,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     alignment: Alignment.bottomCenter,
                     padding: EdgeInsets.only(bottom: 8),
                     color: Colors.white,
-                    height: 58,
+                    height: size.height * 0.074,
                     child: ListTile(
                       leading: Icon(
                         Icons.settings,
-                        size: 32,
+                        size: size.width * 0.075,
                         color: Color(0xFF69A03A),
                       ),
                       title: Text(
@@ -134,17 +142,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     )),
               ),
-              SizedBox(height: 2),
+              SizedBox(height: 1),
               // My Cart
               Container(
                   alignment: Alignment.bottomCenter,
                   padding: EdgeInsets.only(bottom: 8),
                   color: Colors.white,
-                  height: 58,
+                  height: size.height * 0.074,
                   child: ListTile(
                     leading: Icon(
                       Icons.shopping_cart,
-                      size: 32,
+                      size: size.width * 0.075,
                       color: Color(0xFF69A03A),
                     ),
                     title: Text(
@@ -152,13 +160,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: Theme.of(context).textTheme.headline4,
                     ),
                   )),
-              SizedBox(height: 2),
+              SizedBox(height: 1),
               // Rate us
               Container(
                   alignment: Alignment.bottomCenter,
                   padding: EdgeInsets.only(bottom: 8),
                   color: Colors.white,
-                  height: 58,
+                  height: size.height * 0.074,
                   child: ListTile(
                     leading: ImageIcon(
                       AssetImage("assets/icons/rate_us.png"),
@@ -170,17 +178,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: Theme.of(context).textTheme.headline4,
                     ),
                   )),
-              SizedBox(height: 2),
+              SizedBox(height: 1),
               // Refer a Friend
               Container(
                   alignment: Alignment.bottomCenter,
                   padding: EdgeInsets.only(bottom: 8),
                   color: Colors.white,
-                  height: 58,
+                  height: size.height * 0.074,
                   child: ListTile(
                     leading: Icon(
                       Icons.share,
-                      size: 32,
+                      size: size.width * 0.075,
                       color: Color(0xFF69A03A),
                     ),
                     title: Text(
@@ -190,33 +198,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   )),
               SizedBox(height: 2),
               // Help
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: 58,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.help,
-                      size: 32,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'Help',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-              SizedBox(height: 2),
+              InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HelpScreen())),
+                child: Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 8),
+                    color: Colors.white,
+                    height: size.height * 0.074,
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.help,
+                        size: size.width * 0.075,
+                        color: Color(0xFF69A03A),
+                      ),
+                      title: Text(
+                        'Help',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                    )),
+              ),
+              SizedBox(height: 1),
               // Log Out
               Container(
                   alignment: Alignment.bottomCenter,
                   padding: EdgeInsets.only(bottom: 20),
                   color: Colors.white,
-                  height: 70,
                   child: ListTile(
                     leading: Icon(
                       Icons.logout_rounded,
-                      size: 32,
+                      size: size.width * 0.075,
                       color: Color(0xFF69A03A),
                     ),
                     title: Text(

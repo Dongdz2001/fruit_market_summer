@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fruit_market_summer/controller/input_data/init_dry_fruits.dart';
 
+import '../../../../../controller/input_data/init_user.dart';
 import '../../../details_product/detail_product.dart';
 
 class DryFruitsPageviews extends StatefulWidget {
@@ -91,6 +92,31 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                                   !list_Indehiscent_Dry_Fruit[
                                                           index]
                                                       .getFavoutite;
+                                              if (list_Indehiscent_Dry_Fruit[
+                                                      index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    list_Indehiscent_Dry_Fruit[
+                                                        index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      list_Indehiscent_Dry_Fruit[
+                                                              index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(
@@ -108,10 +134,11 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     child: RatingBar.builder(
                                       initialRating:
                                           list_Indehiscent_Dry_Fruit[index]
-                                              .getRatingQuantity,
+                                              .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -119,18 +146,18 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                         color: Colors.amber,
                                       ),
                                       onRatingUpdate: (rating) {
-                                        setState(() {
-                                          rating ==
-                                                  list_Indehiscent_Dry_Fruit[
-                                                          index]
-                                                      .getRatingQuantity
-                                              ? list_Indehiscent_Dry_Fruit[
-                                                      index]
-                                                  .setRatingQuantity = 0
-                                              : list_Indehiscent_Dry_Fruit[
-                                                      index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           list_Indehiscent_Dry_Fruit[
+                                        //                   index]
+                                        //               .getRateGeneral,
+                                        //       ? list_Indehiscent_Dry_Fruit[
+                                        //               index]
+                                        //           .setRatingQuantity = 0
+                                        //       : list_Indehiscent_Dry_Fruit[
+                                        //               index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -240,6 +267,31 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                                   !list_MixedDry_FruitsPack[
                                                           index]
                                                       .getFavoutite;
+                                              if (list_MixedDry_FruitsPack[
+                                                      index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    list_MixedDry_FruitsPack[
+                                                        index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      list_MixedDry_FruitsPack[
+                                                              index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(
@@ -257,10 +309,11 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     child: RatingBar.builder(
                                       initialRating:
                                           list_MixedDry_FruitsPack[index]
-                                              .getRatingQuantity,
+                                              .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -269,16 +322,16 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                       onRatingUpdate: (rating) {
                                         print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  list_MixedDry_FruitsPack[
-                                                          index]
-                                                      .getRatingQuantity
-                                              ? list_MixedDry_FruitsPack[index]
-                                                  .setRatingQuantity = 0
-                                              : list_MixedDry_FruitsPack[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           list_MixedDry_FruitsPack[
+                                        //                   index]
+                                        //               .getRateGeneral,
+                                        //       ? list_MixedDry_FruitsPack[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : list_MixedDry_FruitsPack[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -388,6 +441,31 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                                   !list_Dehiscent_Dry_Fruit[
                                                           index]
                                                       .getFavoutite;
+                                              if (list_Dehiscent_Dry_Fruit[
+                                                      index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    list_Dehiscent_Dry_Fruit[
+                                                        index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      list_Dehiscent_Dry_Fruit[
+                                                              index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(
@@ -405,10 +483,11 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     child: RatingBar.builder(
                                       initialRating:
                                           list_Dehiscent_Dry_Fruit[index]
-                                              .getRatingQuantity,
+                                              .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -417,16 +496,16 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                       onRatingUpdate: (rating) {
                                         print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  list_Dehiscent_Dry_Fruit[
-                                                          index]
-                                                      .getRatingQuantity
-                                              ? list_Dehiscent_Dry_Fruit[index]
-                                                  .setRatingQuantity = 0
-                                              : list_Dehiscent_Dry_Fruit[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           list_Dehiscent_Dry_Fruit[
+                                        //                   index]
+                                        //               .getRateGeneral,
+                                        //       ? list_Dehiscent_Dry_Fruit[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : list_Dehiscent_Dry_Fruit[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -536,6 +615,30 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                                   !list_Kashmiri_Dry_Fruit[
                                                           index]
                                                       .getFavoutite;
+                                              if (list_Kashmiri_Dry_Fruit[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    list_Kashmiri_Dry_Fruit[
+                                                        index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      list_Kashmiri_Dry_Fruit[
+                                                              index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(
@@ -553,10 +656,11 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     child: RatingBar.builder(
                                       initialRating:
                                           list_Kashmiri_Dry_Fruit[index]
-                                              .getRatingQuantity,
+                                              .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -565,15 +669,15 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                       onRatingUpdate: (rating) {
                                         print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  list_Kashmiri_Dry_Fruit[index]
-                                                      .getRatingQuantity
-                                              ? list_Kashmiri_Dry_Fruit[index]
-                                                  .setRatingQuantity = 0
-                                              : list_Kashmiri_Dry_Fruit[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           list_Kashmiri_Dry_Fruit[index]
+                                        //               .getRateGeneral,
+                                        //       ? list_Kashmiri_Dry_Fruit[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : list_Kashmiri_Dry_Fruit[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),

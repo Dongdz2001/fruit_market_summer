@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/home_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/profile_screen.dart';
 
@@ -19,10 +20,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
       'Index 2: School',
       style: optionStyle,
     ),
-    Text(
-      'Index 3: Settings',
-      style: optionStyle,
-    ),
+    FavouriteScreen(),
     ProfileScreen(),
   ];
 
@@ -86,7 +84,8 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                 ],
               ),
               child: BottomNavigationBar(
-                backgroundColor: Colors.grey,
+                type: BottomNavigationBarType.fixed,
+                // backgroundColor: Colors.grey,
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(Icons.home_outlined),
@@ -111,7 +110,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                 ],
                 currentIndex: _selectedIndex,
                 selectedItemColor: Color(0xFF769E49),
-                unselectedItemColor: Colors.black,
+                unselectedItemColor: Color(0xFF838181),
                 onTap: _onItemTapped,
               ),
             ),
@@ -123,35 +122,3 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
     );
   }
 }
-
-
-
-//  appBar: AppBar(
-//             elevation: 0,
-//             toolbarHeight: 30, // Set this height
-//             flexibleSpace: Container(
-//               color: Color(0xFF69A03A),
-//               child: Column(
-//                 children: [
-//                   Padding(
-//                     padding: const EdgeInsets.only(right: 200, bottom: 30),
-//                     child: RichText(
-//                       text: TextSpan(
-//                         style: TextStyle(
-//                             fontFamily: "Poppins",
-//                             fontSize: 20,
-//                             fontWeight: FontWeight.bold),
-//                         children: const <TextSpan>[
-//                           TextSpan(
-//                             text: 'F',
-//                             style: TextStyle(fontSize: 30),
-//                           ),
-//                           TextSpan(text: 'ruit Market'),
-//                         ],
-//                       ),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),

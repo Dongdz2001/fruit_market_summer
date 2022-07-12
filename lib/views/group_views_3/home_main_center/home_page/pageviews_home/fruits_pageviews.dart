@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:fruit_market_summer/controller/input_data/init_fruits.dart';
 
+import '../../../../../controller/input_data/init_user.dart';
 import '../../../details_product/detail_product.dart';
 
 class FruitsPageviews extends StatefulWidget {
@@ -90,6 +91,28 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                                       .setFavoutite =
                                                   !listOrganicFruits[index]
                                                       .getFavoutite;
+                                              if (listOrganicFruits[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listOrganicFruits[index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listOrganicFruits[index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listOrganicFruits[
@@ -106,10 +129,11 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
                                       initialRating: listOrganicFruits[index]
-                                          .getRatingQuantity,
+                                          .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -117,15 +141,15 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                         color: Colors.amber,
                                       ),
                                       onRatingUpdate: (rating) {
-                                        setState(() {
-                                          rating ==
-                                                  listOrganicFruits[index]
-                                                      .getRatingQuantity
-                                              ? listOrganicFruits[index]
-                                                  .setRatingQuantity = 0
-                                              : listOrganicFruits[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listOrganicFruits[index]
+                                        //               .getRateGeneral
+                                        //       ? listOrganicFruits[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listOrganicFruits[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -233,6 +257,28 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                                       .setFavoutite =
                                                   !listMixedFruitsPack[index]
                                                       .getFavoutite;
+                                              if (listMixedFruitsPack[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listMixedFruitsPack[index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listMixedFruitsPack[index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listMixedFruitsPack[
@@ -249,10 +295,11 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
                                       initialRating: listMixedFruitsPack[index]
-                                          .getRatingQuantity,
+                                          .getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -260,16 +307,16 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                         color: Colors.amber,
                                       ),
                                       onRatingUpdate: (rating) {
-                                        print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  listMixedFruitsPack[index]
-                                                      .getRatingQuantity
-                                              ? listMixedFruitsPack[index]
-                                                  .setRatingQuantity = 0
-                                              : listMixedFruitsPack[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // print(rating);
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listMixedFruitsPack[index]
+                                        //               .getRateGeneral
+                                        //       ? listMixedFruitsPack[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listMixedFruitsPack[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -377,6 +424,28 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                                       .setFavoutite =
                                                   !listStoneFruits[index]
                                                       .getFavoutite;
+                                              if (listStoneFruits[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listStoneFruits[index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listStoneFruits[index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listStoneFruits[
@@ -392,11 +461,12 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
-                                      initialRating: listStoneFruits[index]
-                                          .getRatingQuantity,
+                                      initialRating:
+                                          listStoneFruits[index].getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -404,16 +474,16 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                         color: Colors.amber,
                                       ),
                                       onRatingUpdate: (rating) {
-                                        print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  listStoneFruits[index]
-                                                      .getRatingQuantity
-                                              ? listStoneFruits[index]
-                                                  .setRatingQuantity = 0
-                                              : listStoneFruits[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // print(rating);
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listStoneFruits[index]
+                                        //               .getRateGeneral
+                                        //       ? listStoneFruits[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listStoneFruits[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),
@@ -519,6 +589,28 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                               listMelons[index].setFavoutite =
                                                   !listMelons[index]
                                                       .getFavoutite;
+                                              if (listMelons[index]
+                                                  .getFavoutite) {
+                                                manish_chutake.addItemFavourite(
+                                                    listMelons[index]);
+                                              } else {
+                                                for (var i = 0;
+                                                    i <
+                                                        manish_chutake
+                                                            .getLengthFavourite();
+                                                    i++) {
+                                                  if (manish_chutake
+                                                          .getItemFavourite(i)
+                                                          .getName ==
+                                                      listMelons[index]
+                                                          .getName) {
+                                                    manish_chutake
+                                                        .removeItemListFavourite(
+                                                            i);
+                                                    break;
+                                                  }
+                                                }
+                                              }
                                             });
                                           },
                                           child: Image.asset(listMelons[index]
@@ -534,10 +626,11 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     fit: BoxFit.cover,
                                     child: RatingBar.builder(
                                       initialRating:
-                                          listMelons[index].getRatingQuantity,
+                                          listMelons[index].getRateGeneral,
                                       minRating: 1,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
+                                      ignoreGestures: true,
                                       itemCount: 5,
                                       itemPadding: EdgeInsets.only(right: 2),
                                       itemBuilder: (context, _) => Icon(
@@ -545,16 +638,16 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                         color: Colors.amber,
                                       ),
                                       onRatingUpdate: (rating) {
-                                        print(rating);
-                                        setState(() {
-                                          rating ==
-                                                  listMelons[index]
-                                                      .getRatingQuantity
-                                              ? listMelons[index]
-                                                  .setRatingQuantity = 0
-                                              : listMelons[index]
-                                                  .setRatingQuantity = rating;
-                                        });
+                                        // print(rating);
+                                        // setState(() {
+                                        //   rating ==
+                                        //           listMelons[index]
+                                        //               .getRateGeneral
+                                        //       ? listMelons[index]
+                                        //           .setRatingQuantity = 0
+                                        //       : listMelons[index]
+                                        //           .setRatingQuantity = rating;
+                                        // });
                                       },
                                     ),
                                   ),

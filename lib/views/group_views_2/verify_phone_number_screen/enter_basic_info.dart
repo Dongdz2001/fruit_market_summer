@@ -48,8 +48,9 @@ class EnterBasicInfo extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
-                  controller: TextEditingController()..text = '\n\n\n\n\n',
+                  // controller: TextEditingController()..text = '\n\n\n\n\n',
                   keyboardType: TextInputType.multiline,
+                  minLines: 4,
                   maxLines: null,
                   textInputAction: TextInputAction.newline,
                   style: TextStyle(
