@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 
+import '../../../../../../controller/gobal_variable_food/sizeDevice.dart';
 import '../../../../../../controller/input_data/init_vegetable.dart';
 import '../../../../details_product/detail_product.dart';
 
@@ -15,12 +17,14 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xFF69A03A),
         title: Transform(
           // you can forcefully translate values left side using Transform
-          transform: Matrix4.translationValues(-30.0, 17.0, 0.0),
+          transform: Matrix4.translationValues(
+              -witdthDevice(0.09), heightDevice(0.048), 0.0),
           child: Text(
             "My Order",
             style: TextStyle(
@@ -32,7 +36,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         ),
         leading: Transform(
           // you can forcefully translate values left side using Transform
-          transform: Matrix4.translationValues(0.0, 20.0, 0.0),
+          transform: Matrix4.translationValues(0.0, heightDevice(0.05), 0.0),
           child: GestureDetector(
             child: Icon(
               Icons.arrow_back_ios,
@@ -50,7 +54,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         ),
         Expanded(
           child: ListView.builder(
-              itemCount: listOrganicVegetable.length,
+              itemCount: manish_chutake.getLengtListOrder(),
               scrollDirection: Axis.vertical,
               addAutomaticKeepAlives: true,
               itemBuilder: (context, index) => Padding(
@@ -70,8 +74,9 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                               borderRadius: BorderRadius.circular(8.0),
                               child: FittedBox(
                                 fit: BoxFit.cover,
-                                child: Image.asset(
-                                    listOrganicVegetable[index].getImageSrc),
+                                child: Image.asset(manish_chutake
+                                    .getItemListOrder(index)
+                                    .getImageSrc),
                               ),
                             ),
                           ),
@@ -90,7 +95,9 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          listOrganicVegetable[index].getName,
+                                          manish_chutake
+                                              .getItemListOrder(index)
+                                              .getName,
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                               fontFamily: "poppins",
@@ -106,9 +113,9 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                                       child: FittedBox(
                                         fit: BoxFit.fitWidth,
                                         child: RatingBar.builder(
-                                          initialRating:
-                                              listOrganicVegetable[index]
-                                                  .getRatingQuantity,
+                                          initialRating: manish_chutake
+                                              .getItemListOrder(index)
+                                              .getRatingQuantity,
                                           minRating: 1,
                                           direction: Axis.horizontal,
                                           allowHalfRating: true,
@@ -122,14 +129,16 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                                           onRatingUpdate: (rating) {
                                             setState(() {
                                               rating ==
-                                                      listOrganicVegetable[
-                                                              index]
+                                                      manish_chutake
+                                                          .getItemListOrder(
+                                                              index)
                                                           .getRatingQuantity
-                                                  ? listOrganicVegetable[index]
+                                                  ? manish_chutake
+                                                      .getItemListOrder(index)
                                                       .setRatingQuantity = 0
-                                                  : listOrganicVegetable[index]
-                                                          .setRatingQuantity =
-                                                      rating;
+                                                  : manish_chutake
+                                                      .getItemListOrder(index)
+                                                      .setRatingQuantity = rating;
                                             });
                                           },
                                         ),
@@ -157,7 +166,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                                           )),
                                           WidgetSpan(
                                               child: Text(
-                                            "${listOrganicVegetable[index].getDelivered}",
+                                            "${manish_chutake.getItemListOrder(index).getDelivered}",
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "poppins",

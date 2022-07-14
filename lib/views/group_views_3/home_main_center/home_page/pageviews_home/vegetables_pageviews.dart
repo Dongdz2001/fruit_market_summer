@@ -49,7 +49,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.555),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: listOrganicVegetable.length,
                       scrollDirection: Axis.horizontal,
@@ -69,8 +69,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -84,7 +84,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -118,11 +118,12 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                               }
                                             });
                                           },
-                                          child: Image.asset(listOrganicVegetable[
-                                                      index]
-                                                  .getFavoutite
-                                              ? "assets/icons/favourite.png"
-                                              : "assets/icons/unfavourite.png"),
+                                          child: Image.asset(
+                                            listOrganicVegetable[index]
+                                                    .getFavoutite
+                                                ? "assets/icons/favourite.png"
+                                                : "assets/icons/unfavourite.png",
+                                          ),
                                         )),
                                   ],
                                 ),
@@ -189,6 +190,9 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                               ],
                             ),
                           ))),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // List Mixed Vegetables Pack (10% Off)
               RichText(
                 text: TextSpan(
@@ -215,7 +219,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.555),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: listMixedVegetablesPack.length,
                       scrollDirection: Axis.horizontal,
@@ -235,8 +239,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -250,7 +254,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -358,6 +362,9 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                               ],
                             ),
                           ))),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // List Allium Vegetables (20% Off)
               RichText(
                 text: TextSpan(
@@ -384,7 +391,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.555),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: listAlliumVegetable.length,
                       scrollDirection: Axis.horizontal,
@@ -403,8 +410,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -418,7 +425,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -522,6 +529,9 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                               ],
                             ),
                           ))),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // List Root Vegetabels (5% Off)
               RichText(
                 text: TextSpan(
@@ -548,7 +558,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.555),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: listRootVegetable.length,
                       scrollDirection: Axis.horizontal,
@@ -567,8 +577,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -582,7 +592,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {

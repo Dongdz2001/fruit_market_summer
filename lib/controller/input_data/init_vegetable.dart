@@ -13,18 +13,6 @@ List<Food> listOrganicVegetable = [
   brocol_vegetable,
   brinjels_vegetable,
   corriander_vegetable,
-  brocol_vegetable,
-  brinjels_vegetable,
-  corriander_vegetable,
-  brocol_vegetable,
-  brinjels_vegetable,
-  corriander_vegetable,
-  brocol_vegetable,
-  brinjels_vegetable,
-  corriander_vegetable,
-  brocol_vegetable,
-  brinjels_vegetable,
-  corriander_vegetable,
 ];
 
 // init Mixed Vegetables Pack

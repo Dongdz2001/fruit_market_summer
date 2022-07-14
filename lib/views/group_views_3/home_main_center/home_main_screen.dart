@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/home_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/profile_screen.dart';
@@ -42,7 +43,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                   )
                 : AppBar(
                     elevation: 0,
-                    toolbarHeight: 55, // Set this height
+                    toolbarHeight: heightDevice(0.146), // Set this height
                     flexibleSpace: Container(
                       color: Color(0xFF69A03A),
                       child: Column(

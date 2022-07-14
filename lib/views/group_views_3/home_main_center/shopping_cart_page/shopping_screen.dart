@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
 import '../../../../controller/input_data/init_user.dart';
+import 'dart:math';
 
 class ShoppingScreen extends StatefulWidget {
   const ShoppingScreen({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class ShoppingScreen extends StatefulWidget {
 
 class _ShoppingScreenState extends State<ShoppingScreen> {
   String dropdownValue = '440001 Nagpur ,Maharashtra';
+  static int upPrice = 1 + Random().nextInt(10) + Random().nextInt(20);
   List<Food> listVeget =
       manish_chutake.getListFoodOrderFollowType("Vegetables");
   List<Food> listFruit = manish_chutake.getListFoodOrderFollowType("Fruits");
@@ -171,7 +173,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.005)),
                                                   Container(
                                                       child: Text(
-                                                    'Rs ${listVeget[index].getPrice}',
+                                                    'Rs ${listVeget[index].getPrice + upPrice}',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
@@ -387,7 +389,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.005)),
                                                   Container(
                                                       child: Text(
-                                                    'Rs ${listDryFruit[index].getPrice}',
+                                                    'Rs ${listDryFruit[index].getPrice + upPrice}',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
@@ -602,7 +604,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.005)),
                                                   Container(
                                                       child: Text(
-                                                    'Rs ${listFruit[index].getPrice}',
+                                                    'Rs ${listFruit[index].getPrice + upPrice}',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
@@ -778,7 +780,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Total- Rs 570',
+                      'Total- Rs ${manish_chutake.getSumListOrder()}',
                       style: TextStyle(
                           fontFamily: "pippins",
                           fontSize: 18,

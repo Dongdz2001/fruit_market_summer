@@ -49,7 +49,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.55),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: list_Indehiscent_Dry_Fruit.length,
                       scrollDirection: Axis.horizontal,
@@ -69,8 +69,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -84,7 +84,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -195,6 +195,9 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                               ],
                             ),
                           ))),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // List Mixed Dry Fruits Pack (10% Off)
               RichText(
                 text: TextSpan(
@@ -221,7 +224,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.55),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: list_MixedDry_FruitsPack.length,
                       scrollDirection: Axis.horizontal,
@@ -241,8 +244,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -256,7 +259,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -366,6 +369,9 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                               ],
                             ),
                           ))),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // List Dehiscent Dry Fruits (15% Off)
               RichText(
                 text: TextSpan(
@@ -392,7 +398,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.55),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: list_Dehiscent_Dry_Fruit.length,
                       scrollDirection: Axis.horizontal,
@@ -412,8 +418,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -427,7 +433,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -537,6 +543,9 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                               ],
                             ),
                           ))),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // List Kashmiri Dry Fruits (5% Off)
               RichText(
                 text: TextSpan(
@@ -563,7 +572,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.55),
+                  height: heightDevice(0.565),
                   child: ListView.builder(
                       itemCount: list_Kashmiri_Dry_Fruit.length,
                       scrollDirection: Axis.horizontal,
@@ -583,8 +592,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.33),
-                                      width: witdthDevice(0.26),
+                                      height: heightDevice(0.365),
+                                      width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -598,7 +607,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     ),
                                     Positioned(
                                         height: heightDevice(0.15),
-                                        width: witdthDevice(0.425),
+                                        width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {

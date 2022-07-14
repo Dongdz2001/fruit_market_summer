@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/pinput_OTP_screen.dart';
 
 class FinishVerifyle extends StatefulWidget {
@@ -27,11 +28,14 @@ class _FinishVerifyleState extends State<FinishVerifyle> {
         child: Column(
           children: [
             SizedBox(
-              height: 200,
+              height: heightDevice(0.55),
             ),
-            Image.asset("assets/icons/finish_verifyle.png"),
             SizedBox(
-              height: 60,
+                height: heightDevice(0.35),
+                width: witdthDevice(0.4),
+                child: Image.asset("assets/icons/finish_verifyle.png")),
+            SizedBox(
+              height: heightDevice(0.12),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),

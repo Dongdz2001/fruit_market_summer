@@ -116,14 +116,21 @@ class _HomeScreenState extends State<HomeScreen>
           left: witdthDevice(0.015),
           child: SizedBox(
             width: witdthDevice(0.97),
-            height: heightDevice(0.15),
+            height: heightDevice(0.14),
             child: Card(
               child: new ListTile(
                 minLeadingWidth: 10,
-                leading: new Icon(Icons.search),
+                leading: Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: new Icon(Icons.search),
+                ),
                 title: new TextField(
+                  autocorrect: false,
+                  enableSuggestions: false,
                   decoration: new InputDecoration(
-                      hintText: 'Search', border: InputBorder.none),
+                      contentPadding: EdgeInsets.only(bottom: 5),
+                      hintText: 'Search',
+                      border: InputBorder.none),
                 ),
 
                 //     },

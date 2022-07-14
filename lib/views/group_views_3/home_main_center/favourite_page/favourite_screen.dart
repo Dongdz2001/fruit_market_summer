@@ -53,8 +53,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                         children: [
                           Container(
                             margin: const EdgeInsets.only(right: 15, top: 10),
-                            height: 100,
-                            width: 100,
+                            height: witdthDevice(0.26),
+                            width: heightDevice(0.25),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: FittedBox(
@@ -68,7 +68,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              SizedBox(height: 6),
+                              SizedBox(height: heightDevice(0.025)),
                               Container(
                                 width:
                                     MediaQuery.of(context).size.width * 0.582,
@@ -98,6 +98,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                         ),
                                       ],
                                     ),
+                                    SizedBox(
+                                      height: heightDevice(0.005),
+                                    ),
                                     Container(
                                         child: Text(
                                       'Pick up from organic farms',
@@ -106,9 +109,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                           fontSize: 12,
                                           color: Colors.grey),
                                     )),
-                                    SizedBox(height: 4),
+                                    SizedBox(height: heightDevice(0.01)),
                                     SizedBox(
-                                      width: 90,
+                                      width: witdthDevice(0.2),
                                       child: FittedBox(
                                         fit: BoxFit.fitWidth,
                                         child: RatingBar.builder(
@@ -143,7 +146,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: heightDevice(0.01)),
+                                    SizedBox(height: heightDevice(0.025)),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
@@ -156,8 +159,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                                 .downAmount(),
                                           ),
                                           child: Container(
-                                            width: 30,
-                                            height: 30,
+                                            width: witdthDevice(0.075),
+                                            height: heightDevice(0.075),
                                             padding:
                                                 EdgeInsets.only(bottom: 10),
                                             decoration: BoxDecoration(
@@ -186,8 +189,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                                 .upAmount(),
                                           ),
                                           child: Container(
-                                            width: 30,
-                                            height: 30,
+                                            width: witdthDevice(0.075),
+                                            height: heightDevice(0.075),
                                             decoration: BoxDecoration(
                                               border: Border.all(
                                                   color: Colors.grey, width: 2),
@@ -198,17 +201,21 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                                 Center(child: const Text('+')),
                                           ),
                                         ),
-                                        SizedBox(width: 40),
+                                        SizedBox(width: witdthDevice(0.1)),
                                         SizedBox(
-                                          height: 30,
+                                          height: heightDevice(0.075),
                                           child: ElevatedButton(
                                               onPressed: () {
-                                                print("click!");
-                                                setState(() => manish_chutake
-                                                    .addItemListOrder(
-                                                        manish_chutake
-                                                            .getItemFavourite(
-                                                                index)));
+                                                if (manish_chutake
+                                                        .getItemFavourite(index)
+                                                        .getAmount !=
+                                                    0) {
+                                                  setState(() => manish_chutake
+                                                      .addItemListOrder(
+                                                          manish_chutake
+                                                              .getItemFavourite(
+                                                                  index)));
+                                                }
                                               },
                                               style: ButtonStyle(
                                                   backgroundColor:
