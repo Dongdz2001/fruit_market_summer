@@ -23,8 +23,8 @@ class User {
 
   //list order food for one user
   List<Food> _listOrder = [];
-  // list  quantity per product for one user
-  List<int> _list_quantity_per_product = [];
+  // // list  quantity per product for one user
+  // List<int> _list_quantity_per_product = [];
 
   // method add , remove , check null for list Favourite
   String getNameItemFaVouRite(int index) => this._listFavoutrite[index].getName;
@@ -43,25 +43,22 @@ class User {
   bool isInvalidIndexItemOrder(int index) => index < _listOrder.length;
   void addItemListOrder(Food? food) {
     if (_listOrder.length == 0) {
-      this._listOrder.add(food!);
-      this._list_quantity_per_product.add(food.getAmount);
+      this._listOrder.add(Food.clone(food!)..setAmount = food.getAmount);
+      // this._list_quantity_per_product.add(food.getAmount);
     } else {
       bool _flag = true;
       for (var i = 0; i < _listOrder.length; i++) {
         if (_listOrder[i].getName == food!.getName) {
-          int temp = this._list_quantity_per_product[i] +
+          this._listOrder[i].setAmount = this._listOrder[i].getAmount +
               int.parse(food.getAmount.toString());
-          setItemQuantityPerProduct(temp, i);
           _flag = !_flag;
           break;
         }
       }
       if (_flag) {
-        this._listOrder.add(food!);
-        this._list_quantity_per_product.add(food.getAmount);
+        this._listOrder.add(Food.clone(food!)..setAmount = food.getAmount);
       }
     }
-
     print("${_listOrder.length}");
   }
 
@@ -70,29 +67,36 @@ class User {
   void removeItemListOrder(int index) {
     if (isInvalidIndexItemOrder(index)) {
       this._listOrder.removeAt(index);
-      this._list_quantity_per_product.removeAt(index);
     } else
       print("$index out of range");
   }
 
-  void removeItemListOrderByName(String typeName) {
+  void removeItemListOrderByName(String itemName) {
     for (var i = 0; i < this._listOrder.length; i++) {
-      if (this._listOrder[i].getName == typeName) {
+      if (this._listOrder[i].getName == itemName) {
         this._listOrder.removeAt(i);
-        this._list_quantity_per_product.removeAt(i);
         break;
       }
     }
   }
 
   // edit , get Quantity Per Product
-  void setItemQuantityPerProduct(int value, int index) =>
-      isInvalidIndexItemOrder(index)
-          ? this._list_quantity_per_product[index] = value
-          : null;
-  int getItemQuantityPerProduct(int index) => isInvalidIndexItemOrder(index)
-      ? this._list_quantity_per_product[index]
-      : -1;
+  // void setItemQuantityPerProduct(int value, int index) =>
+  //     isInvalidIndexItemOrder(index)
+  //         ? this._list_quantity_per_product[index] = value
+  //         : null;
+  // int getItemQuantityPerProduct(int index) => isInvalidIndexItemOrder(index)
+  //     ? this._list_quantity_per_product[index]
+  //     : -1;
+  // int getItemQuantityPerProductbyName(String typeName) {
+  //   for (var i = 0; i < this._listOrder.length; i++) {
+  //     if (this._listOrder[i].getName == typeName) {
+  //       return this._list_quantity_per_product[i];
+  //     }
+  //   }
+  //   return -1;
+  // }
+
   // get list food order by type
   List<Food> getListFoodOrderFollowType(String typeName) {
     List<Food> list = [];
@@ -108,14 +112,14 @@ class User {
   }
 
   // up down Amount in a List Quantity Per Product
-  bool isDefaultAmount(int index) => this._list_quantity_per_product[index] > 0;
-  bool isMaxAmount(int index) => this._list_quantity_per_product[index] < 50;
-  void upAmountUserProduct(int index) => isMaxAmount(index)
-      ? this._list_quantity_per_product[index]++
-      : print("Amount was max");
-  void downAmountProduct(int index) => isDefaultAmount(index)
-      ? this._list_quantity_per_product[index]--
-      : print("Amount was min");
+  // bool isDefaultAmount(int index) => this._listOrder[index].getAmount > 0;
+  // bool isMaxAmount(int index) => this._listOrder[index].getAmount < 50;
+  // void upAmountUserProduct(int index) => isMaxAmount(index)
+  //     ? this._list_quantity_per_product[index]++
+  //     : print("Amount was max");
+  // void downAmountProduct(int index) => isDefaultAmount(index)
+  //     ? this._list_quantity_per_product[index]--
+  //     : print("Amount was min");
 
   // contructor for Users
   User({required this.name, required this.email, required this.imageSrc});

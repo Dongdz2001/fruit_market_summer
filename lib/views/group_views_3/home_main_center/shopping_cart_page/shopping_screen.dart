@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
-
 import '../../../../controller/input_data/init_user.dart';
 
 class ShoppingScreen extends StatefulWidget {
@@ -68,15 +67,19 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                   ),
 
                   // Vegetables
-                  Container(
-                    alignment: Alignment.topLeft,
-                    color: Color(0xFFE6E6E6),
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      'Vegerables',
-                      style: Theme.of(context).textTheme.headline4,
+                  Visibility(
+                    visible: listVeget.length != 0,
+                    child: Container(
+                      alignment: Alignment.topLeft,
+                      color: Color(0xFFE6E6E6),
+                      width: MediaQuery.of(context).size.width,
+                      child: Text(
+                        'Vegerables',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   ),
                   // List Vegetables
                   Scrollbar(
@@ -132,9 +135,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                             .spaceBetween,
                                                     children: [
                                                       Text(
-                                                        manish_chutake
-                                                            .getItemListOrder(
-                                                                index)
+                                                        listVeget[index]
                                                             .getName,
                                                         textAlign:
                                                             TextAlign.left,
@@ -170,7 +171,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.005)),
                                                   Container(
                                                       child: Text(
-                                                    'Rs ${manish_chutake.getItemListOrder(index).getPrice}',
+                                                    'Rs ${listVeget[index].getPrice}',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
@@ -185,7 +186,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.01)),
                                                   Container(
                                                       child: Text(
-                                                    '${manish_chutake.getItemListOrder(index).getPrice} Per/ kg',
+                                                    '${listVeget[index].getPrice} Per/ kg',
                                                     style: TextStyle(
                                                       fontFamily: "poppins",
                                                       fontSize: 14,
@@ -205,10 +206,9 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                       // button down amount
                                                       InkWell(
                                                         onTap: () => setState(
-                                                          () => manish_chutake
-                                                              .downAmountProduct(
-                                                                  index),
-                                                        ),
+                                                            () => listVeget[
+                                                                    index]
+                                                                .downAmount()),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -237,17 +237,15 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           )),
                                                         ),
                                                       ),
-                                                      Text(manish_chutake
-                                                          .getItemQuantityPerProduct(
-                                                              index)
+                                                      Text(listVeget[index]
+                                                          .getAmount
                                                           .toString()),
                                                       // button up amount
                                                       InkWell(
                                                         onTap: () => setState(
-                                                          () => manish_chutake
-                                                              .upAmountUserProduct(
-                                                                  index),
-                                                        ),
+                                                            () => listVeget[
+                                                                    index]
+                                                                .upAmount()),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -286,7 +284,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
 
                   // Dry Fruit
                   Visibility(
-                    visible: true,
+                    visible: listDryFruit.length != 0,
                     child: Container(
                       alignment: Alignment.topLeft,
                       color: Color(0xFFE6E6E6),
@@ -305,7 +303,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                         ListView.builder(
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
-                            itemCount: manish_chutake.getLengtListOrder(),
+                            itemCount: listDryFruit.length,
                             scrollDirection: Axis.vertical,
                             addAutomaticKeepAlives: true,
                             itemBuilder: (context, index) => Padding(
@@ -328,9 +326,9 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                 BorderRadius.circular(8.0),
                                             child: FittedBox(
                                               fit: BoxFit.cover,
-                                              child: Image.asset(manish_chutake
-                                                  .getItemListOrder(index)
-                                                  .getImageSrc),
+                                              child: Image.asset(
+                                                  listDryFruit[index]
+                                                      .getImageSrc),
                                             ),
                                           ),
                                         ),
@@ -353,9 +351,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                             .spaceBetween,
                                                     children: [
                                                       Text(
-                                                        manish_chutake
-                                                            .getItemListOrder(
-                                                                index)
+                                                        listDryFruit[index]
                                                             .getName,
                                                         textAlign:
                                                             TextAlign.left,
@@ -368,10 +364,16 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                                     .w600),
                                                       ),
                                                       GestureDetector(
-                                                        onLongPress: () => setState(
-                                                            () => manish_chutake
-                                                                .removeItemListOrder(
-                                                                    index)),
+                                                        onLongPress: () =>
+                                                            setState(() {
+                                                          manish_chutake
+                                                              .removeItemListOrderByName(
+                                                                  listDryFruit[
+                                                                          index]
+                                                                      .getName);
+                                                          listDryFruit
+                                                              .removeAt(index);
+                                                        }),
                                                         child: ImageIcon(
                                                           AssetImage(
                                                               "assets/icons/deleted.png"),
@@ -385,7 +387,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.005)),
                                                   Container(
                                                       child: Text(
-                                                    'Rs ${manish_chutake.getItemListOrder(index).getPrice}',
+                                                    'Rs ${listDryFruit[index].getPrice}',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
@@ -400,7 +402,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.01)),
                                                   Container(
                                                       child: Text(
-                                                    '${manish_chutake.getItemListOrder(index).getPrice} Per/ kg',
+                                                    '${listDryFruit[index].getPrice} Per/ kg',
                                                     style: TextStyle(
                                                       fontFamily: "poppins",
                                                       fontSize: 14,
@@ -420,10 +422,9 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                       // button down amount
                                                       InkWell(
                                                         onTap: () => setState(
-                                                          () => manish_chutake
-                                                              .downAmountProduct(
-                                                                  index),
-                                                        ),
+                                                            () => listDryFruit[
+                                                                    index]
+                                                                .downAmount()),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -452,17 +453,15 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           )),
                                                         ),
                                                       ),
-                                                      Text(manish_chutake
-                                                          .getItemQuantityPerProduct(
-                                                              index)
+                                                      Text(listDryFruit[index]
+                                                          .getAmount
                                                           .toString()),
                                                       // button up amount
                                                       InkWell(
                                                         onTap: () => setState(
-                                                          () => manish_chutake
-                                                              .upAmountUserProduct(
-                                                                  index),
-                                                        ),
+                                                            () => listDryFruit[
+                                                                    index]
+                                                                .upAmount()),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -501,7 +500,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
 
                   // Fruit
                   Visibility(
-                    visible: true,
+                    visible: listFruit.length != 0,
                     child: Container(
                       alignment: Alignment.topLeft,
                       color: Color(0xFFE6E6E6),
@@ -520,7 +519,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                         ListView.builder(
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
-                            itemCount: manish_chutake.getLengtListOrder(),
+                            itemCount: listFruit.length,
                             scrollDirection: Axis.vertical,
                             addAutomaticKeepAlives: true,
                             itemBuilder: (context, index) => Padding(
@@ -543,9 +542,8 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                 BorderRadius.circular(8.0),
                                             child: FittedBox(
                                               fit: BoxFit.cover,
-                                              child: Image.asset(manish_chutake
-                                                  .getItemListOrder(index)
-                                                  .getImageSrc),
+                                              child: Image.asset(
+                                                  listFruit[index].getImageSrc),
                                             ),
                                           ),
                                         ),
@@ -568,9 +566,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                             .spaceBetween,
                                                     children: [
                                                       Text(
-                                                        manish_chutake
-                                                            .getItemListOrder(
-                                                                index)
+                                                        listFruit[index]
                                                             .getName,
                                                         textAlign:
                                                             TextAlign.left,
@@ -583,10 +579,16 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                                     .w600),
                                                       ),
                                                       GestureDetector(
-                                                        onLongPress: () => setState(
-                                                            () => manish_chutake
-                                                                .removeItemListOrder(
-                                                                    index)),
+                                                        onLongPress: () =>
+                                                            setState(() {
+                                                          manish_chutake
+                                                              .removeItemListOrderByName(
+                                                                  listFruit[
+                                                                          index]
+                                                                      .getName);
+                                                          listFruit
+                                                              .removeAt(index);
+                                                        }),
                                                         child: ImageIcon(
                                                           AssetImage(
                                                               "assets/icons/deleted.png"),
@@ -600,7 +602,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.005)),
                                                   Container(
                                                       child: Text(
-                                                    'Rs ${manish_chutake.getItemListOrder(index).getPrice}',
+                                                    'Rs ${listFruit[index].getPrice}',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
@@ -615,7 +617,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           heightDevice(0.01)),
                                                   Container(
                                                       child: Text(
-                                                    '${manish_chutake.getItemListOrder(index).getPrice} Per/ kg',
+                                                    '${listFruit[index].getPrice} Per/ kg',
                                                     style: TextStyle(
                                                       fontFamily: "poppins",
                                                       fontSize: 14,
@@ -635,10 +637,9 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                       // button down amount
                                                       InkWell(
                                                         onTap: () => setState(
-                                                          () => manish_chutake
-                                                              .downAmountProduct(
-                                                                  index),
-                                                        ),
+                                                            () => listFruit[
+                                                                    index]
+                                                                .downAmount()),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -667,17 +668,15 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           )),
                                                         ),
                                                       ),
-                                                      Text(manish_chutake
-                                                          .getItemQuantityPerProduct(
-                                                              index)
+                                                      Text(listFruit[index]
+                                                          .getAmount
                                                           .toString()),
                                                       // button up amount
                                                       InkWell(
                                                         onTap: () => setState(
-                                                          () => manish_chutake
-                                                              .upAmountUserProduct(
-                                                                  index),
-                                                        ),
+                                                            () => listFruit[
+                                                                    index]
+                                                                .upAmount()),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),

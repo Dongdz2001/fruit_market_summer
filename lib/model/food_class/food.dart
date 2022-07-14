@@ -122,5 +122,6 @@ body from Cancer.
   // contructor for Food object
   Food(this._name, this._type, this._imageSrc, this._price);
   // Food(this._name, this._type, this._imageSrc, this._price, this._nutrition);
-
+  Food.clone(Food food)
+      : this(food._name, food._type, food._imageSrc, food._price);
 }
