@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 
 import '../../../../controller/input_data/init_vegetable.dart';
@@ -142,7 +143,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 10),
+                                    SizedBox(height: heightDevice(0.01)),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
@@ -201,7 +202,14 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                         SizedBox(
                                           height: 30,
                                           child: ElevatedButton(
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                print("click!");
+                                                setState(() => manish_chutake
+                                                    .addItemListOrder(
+                                                        manish_chutake
+                                                            .getItemFavourite(
+                                                                index)));
+                                              },
                                               style: ButtonStyle(
                                                   backgroundColor:
                                                       MaterialStateProperty.all<

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_1/page_views/onboarding_screen.dart';
 import 'package:fruit_market_summer/views/group_views_1/splash_screen/splashscreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -71,6 +72,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    widthSizeDevide = MediaQuery.of(context).size.width;
+    heightSizeDevide = MediaQuery.of(context).size.width;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //

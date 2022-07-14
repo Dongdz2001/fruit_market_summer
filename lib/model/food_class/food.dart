@@ -28,8 +28,28 @@ in organic grapes which can be healthier hair and
 skin. It can be improve Your heart health. Protect your
 body from Cancer.
   """;
+  // Categorical list of foods
+  List<String> listTypeVegetables = [
+    "Organic Vegetable",
+    "Mixed Vegetables Pack",
+    "Allium Vegetable",
+    "Root Vegetable"
+  ];
+  List<String> listTypeFruits = [
+    "Organic Fruits",
+    "Mixed Fruits Pack",
+    "Stone Fruits",
+    "Melons"
+  ];
+  List<String> listTypeDryFruits = [
+    "Indehiscent Dry Fruit",
+    "Mixed Dry Fruits Pack",
+    "Dehiscent Dry Fruit",
+    "Kashmiri Dry Fruit"
+  ];
+
   // get set _Amount
-  get getAmount => this._amount;
+  get getAmount => _amount;
   set setAmount(int _amount) => this._amount = _amount;
 
   //get set RateGeneral
@@ -89,7 +109,18 @@ body from Cancer.
   void downAmount() =>
       isDefaultAmount() ? this._amount-- : print("Amount was min");
 
+  // Method get type of a food
+  String getTypeOfFood() {
+    if (listTypeVegetables.contains(this._type)) {
+      return "Vegetables";
+    } else if (listTypeFruits.contains(this._type)) {
+      return "Fruits";
+    } else
+      return "Dry Fruits";
+  }
+
   // contructor for Food object
   Food(this._name, this._type, this._imageSrc, this._price);
   // Food(this._name, this._type, this._imageSrc, this._price, this._nutrition);
+
 }

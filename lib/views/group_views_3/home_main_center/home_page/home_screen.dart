@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/dry_fruits_pageviews.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/fruits_pageviews.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/vegetables_pageviews.dart';
@@ -33,16 +34,16 @@ class _HomeScreenState extends State<HomeScreen>
         Scaffold(
           body: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: Container(
-                  height: 40,
-                  color: Color(0xFF69A03A),
-                ),
+              Container(
+                height: heightDevice(0.1),
+                color: Color(0xFF69A03A),
+              ),
+              SizedBox(
+                height: heightDevice(0.085),
               ),
               // give the tab bar a height [can change hheight to preferred height]
               Container(
-                height: 30,
+                height: heightDevice(0.085),
                 decoration: BoxDecoration(
                   color: Theme.of(context).scaffoldBackgroundColor,
                   borderRadius: BorderRadius.circular(
@@ -69,19 +70,19 @@ class _HomeScreenState extends State<HomeScreen>
                   tabs: [
                     // first tab [you can add an icon using the icon property]
                     SizedBox(
-                      width: 100,
+                      width: witdthDevice(0.25),
                       child: Tab(
                         text: 'Vegetables',
                       ),
                     ),
                     SizedBox(
-                      width: 100,
+                      width: witdthDevice(0.25),
                       child: Tab(
                         text: 'Fruits',
                       ),
                     ),
                     SizedBox(
-                      width: 100,
+                      width: witdthDevice(0.25),
                       child: Tab(
                         text: 'Dry Fruits',
                       ),
@@ -89,20 +90,20 @@ class _HomeScreenState extends State<HomeScreen>
                   ],
                 ),
               ),
+              SizedBox(
+                height: heightDevice(0.03),
+              ),
               // tab bar view here
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: TabBarView(
-                    controller: _tabController,
-                    children: [
-                      // first tab bar view widget
-                      VegetablesPageviews(),
-                      // second tab bar view widget
-                      FruitsPageviews(),
-                      DryFruitsPageviews()
-                    ],
-                  ),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    // first tab bar view widget
+                    VegetablesPageviews(),
+                    // second tab bar view widget
+                    FruitsPageviews(),
+                    DryFruitsPageviews()
+                  ],
                 ),
               ),
             ],
@@ -111,14 +112,14 @@ class _HomeScreenState extends State<HomeScreen>
 
         //Search listitle
         Positioned(
-          top: 10,
-          left: 7,
+          top: heightDevice(0.02),
+          left: witdthDevice(0.015),
           child: SizedBox(
-            width: 380,
-            height: 60,
+            width: witdthDevice(0.97),
+            height: heightDevice(0.15),
             child: Card(
               child: new ListTile(
-                minLeadingWidth: 15,
+                minLeadingWidth: 10,
                 leading: new Icon(Icons.search),
                 title: new TextField(
                   decoration: new InputDecoration(
@@ -135,10 +136,3 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 }
-
-
-// controller: controller,
-  // onChanged: onSearchTextChanged,
-     //     onPressed: () {
-                //       // controller.clear();
-                //       // onSearchTextChanged('');

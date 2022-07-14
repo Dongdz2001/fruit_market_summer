@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fruit_market_summer/controller/input_data/init_dry_fruits.dart';
 
+import '../../../../../controller/gobal_variable_food/sizeDevice.dart';
 import '../../../../../controller/input_data/init_user.dart';
 import '../../../details_product/detail_product.dart';
 
@@ -48,7 +49,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.55),
                   child: ListView.builder(
                       itemCount: list_Indehiscent_Dry_Fruit.length,
                       scrollDirection: Axis.horizontal,
@@ -68,8 +69,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -82,8 +83,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -128,7 +129,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
@@ -195,25 +196,22 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                             ),
                           ))),
               // List Mixed Dry Fruits Pack (10% Off)
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "poppins",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Mixed Dry Fruits Pack  ',
-                      ),
-                      TextSpan(
-                        text: '(10% Off)',
-                        style: TextStyle(color: Color(0xFF4CA300)),
-                      ),
-                    ],
-                  ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "poppins",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Mixed Dry Fruits Pack  ',
+                    ),
+                    TextSpan(
+                      text: '(10% Off)',
+                      style: TextStyle(color: Color(0xFF4CA300)),
+                    ),
+                  ],
                 ),
               ),
               Text(
@@ -223,7 +221,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.55),
                   child: ListView.builder(
                       itemCount: list_MixedDry_FruitsPack.length,
                       scrollDirection: Axis.horizontal,
@@ -243,8 +241,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -257,8 +255,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -303,7 +301,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
@@ -369,25 +367,22 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                             ),
                           ))),
               // List Dehiscent Dry Fruits (15% Off)
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "poppins",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Dehiscent Dry Fruits  ',
-                      ),
-                      TextSpan(
-                        text: '(15% Off)',
-                        style: TextStyle(color: Color(0xFF4CA300)),
-                      ),
-                    ],
-                  ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "poppins",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Dehiscent Dry Fruits  ',
+                    ),
+                    TextSpan(
+                      text: '(15% Off)',
+                      style: TextStyle(color: Color(0xFF4CA300)),
+                    ),
+                  ],
                 ),
               ),
               Text(
@@ -397,7 +392,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.55),
                   child: ListView.builder(
                       itemCount: list_Dehiscent_Dry_Fruit.length,
                       scrollDirection: Axis.horizontal,
@@ -417,8 +412,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -431,8 +426,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -477,7 +472,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
@@ -543,25 +538,22 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                             ),
                           ))),
               // List Kashmiri Dry Fruits (5% Off)
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "poppins",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Kashmiri Dry Fruits  ',
-                      ),
-                      TextSpan(
-                        text: '(5% Off)',
-                        style: TextStyle(color: Color(0xFF4CA300)),
-                      ),
-                    ],
-                  ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "poppins",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Kashmiri Dry Fruits  ',
+                    ),
+                    TextSpan(
+                      text: '(5% Off)',
+                      style: TextStyle(color: Color(0xFF4CA300)),
+                    ),
+                  ],
                 ),
               ),
               Text(
@@ -571,7 +563,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.55),
                   child: ListView.builder(
                       itemCount: list_Kashmiri_Dry_Fruit.length,
                       scrollDirection: Axis.horizontal,
@@ -591,8 +583,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -605,8 +597,8 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -650,7 +642,7 @@ class _DryFruitsPageviewsState extends State<DryFruitsPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.cover,
                                     child: RatingBar.builder(

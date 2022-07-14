@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import 'package:fruit_market_summer/controller/input_data/init_vegetable.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
@@ -48,7 +49,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.555),
                   child: ListView.builder(
                       itemCount: listOrganicVegetable.length,
                       scrollDirection: Axis.horizontal,
@@ -68,8 +69,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -82,8 +83,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -126,7 +127,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
@@ -189,25 +190,22 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                             ),
                           ))),
               // List Mixed Vegetables Pack (10% Off)
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "poppins",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Mixed Vegetables Pack  ',
-                      ),
-                      TextSpan(
-                        text: '(10% Off)',
-                        style: TextStyle(color: Color(0xFF4CA300)),
-                      ),
-                    ],
-                  ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "poppins",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Mixed Vegetables Pack  ',
+                    ),
+                    TextSpan(
+                      text: '(10% Off)',
+                      style: TextStyle(color: Color(0xFF4CA300)),
+                    ),
+                  ],
                 ),
               ),
               Text(
@@ -217,7 +215,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.555),
                   child: ListView.builder(
                       itemCount: listMixedVegetablesPack.length,
                       scrollDirection: Axis.horizontal,
@@ -237,8 +235,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -251,8 +249,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -296,7 +294,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
@@ -361,25 +359,22 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                             ),
                           ))),
               // List Allium Vegetables (20% Off)
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "poppins",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Allium Vegetables  ',
-                      ),
-                      TextSpan(
-                        text: '(20% Off)',
-                        style: TextStyle(color: Color(0xFF4CA300)),
-                      ),
-                    ],
-                  ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "poppins",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Allium Vegetables  ',
+                    ),
+                    TextSpan(
+                      text: '(20% Off)',
+                      style: TextStyle(color: Color(0xFF4CA300)),
+                    ),
+                  ],
                 ),
               ),
               Text(
@@ -389,7 +384,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.555),
                   child: ListView.builder(
                       itemCount: listAlliumVegetable.length,
                       scrollDirection: Axis.horizontal,
@@ -408,8 +403,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -422,8 +417,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -464,7 +459,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.fitWidth,
                                     child: RatingBar.builder(
@@ -528,25 +523,22 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                             ),
                           ))),
               // List Root Vegetabels (5% Off)
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: "poppins",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: const <TextSpan>[
-                      TextSpan(
-                        text: 'Root Vegetabels ',
-                      ),
-                      TextSpan(
-                        text: '(5% Off)',
-                        style: TextStyle(color: Color(0xFF4CA300)),
-                      ),
-                    ],
-                  ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "poppins",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Root Vegetabels ',
+                    ),
+                    TextSpan(
+                      text: '(5% Off)',
+                      style: TextStyle(color: Color(0xFF4CA300)),
+                    ),
+                  ],
                 ),
               ),
               Text(
@@ -556,7 +548,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                 ),
               ),
               Container(
-                  height: 230,
+                  height: heightDevice(0.555),
                   child: ListView.builder(
                       itemCount: listRootVegetable.length,
                       scrollDirection: Axis.horizontal,
@@ -575,8 +567,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: 143,
-                                      width: 118,
+                                      height: heightDevice(0.33),
+                                      width: witdthDevice(0.26),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -589,8 +581,8 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        right: 25,
-                                        top: 15,
+                                        height: heightDevice(0.15),
+                                        width: witdthDevice(0.425),
                                         child: GestureDetector(
                                           onTap: () {
                                             setState(() {
@@ -631,7 +623,7 @@ class _VegetablesPageviewsState extends State<VegetablesPageviews> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 90,
+                                  width: witdthDevice(0.22),
                                   child: FittedBox(
                                     fit: BoxFit.cover,
                                     child: RatingBar.builder(

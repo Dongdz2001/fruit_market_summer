@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import 'package:fruit_market_summer/model/icons_custom/my_flutter_app_icons.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/help/help_screen.dart';
@@ -31,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 5),
+                SizedBox(height: heightDevice(0.001)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -52,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.circular(360),
                           color: Colors.white,
                         )),
-                    SizedBox(width: 115),
+                    SizedBox(width: witdthDevice(0.3)),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 55),
                       child: Icon(
@@ -61,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         size: 20,
                       ),
                     ),
-                    SizedBox(width: 25),
+                    SizedBox(width: witdthDevice(0.06)),
                   ],
                 ),
                 SizedBox(height: size.height * 0.02),
@@ -69,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   "${manish_chutake.getName}",
                   style: Theme.of(context).textTheme.headline6,
                 ),
-                SizedBox(height: 6),
+                SizedBox(height: heightDevice(0.01)),
                 Text(
                   "${manish_chutake.getEmail}",
                   style: Theme.of(context).textTheme.bodyText1,
@@ -78,164 +79,172 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           // List menu profile
-          ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              // My Order
-              InkWell(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyOrderScreen())),
-                child: Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: EdgeInsets.only(bottom: 8),
-                    color: Colors.white,
-                    height: size.height * 0.074,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.shopping_bag,
-                        size: size.width * 0.075,
-                        color: Color(0xFF69A03A),
-                      ),
-                      title: Text(
-                        'My Orders',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    )),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: ListView(
+                shrinkWrap: true,
+                children: <Widget>[
+                  // My Order
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyOrderScreen())),
+                    child: Container(
+                        alignment: Alignment.bottomCenter,
+                        color: Colors.white,
+                        height: size.height * 0.074,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.shopping_bag,
+                            size: size.width * 0.075,
+                            color: Color(0xFF69A03A),
+                          ),
+                          title: Text(
+                            'My Orders',
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        )),
+                  ),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // Favourites
+                  Container(
+                      alignment: Alignment.bottomCenter,
+                      color: Colors.white,
+                      height: size.height * 0.074,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.favorite,
+                          size: size.width * 0.075,
+                          color: Color(0xFF69A03A),
+                        ),
+                        title: Text(
+                          'Favourites',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // Settings
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SettingScreen())),
+                    child: Container(
+                        alignment: Alignment.bottomCenter,
+                        color: Colors.white,
+                        height: size.height * 0.074,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.settings,
+                            size: size.width * 0.075,
+                            color: Color(0xFF69A03A),
+                          ),
+                          title: Text(
+                            'Settings',
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        )),
+                  ),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // My Cart
+                  Container(
+                      alignment: Alignment.bottomCenter,
+                      color: Colors.white,
+                      height: size.height * 0.074,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.shopping_cart,
+                          size: size.width * 0.075,
+                          color: Color(0xFF69A03A),
+                        ),
+                        title: Text(
+                          'My Cart',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // Rate us
+                  Container(
+                      alignment: Alignment.bottomCenter,
+                      color: Colors.white,
+                      height: size.height * 0.074,
+                      child: ListTile(
+                        leading: ImageIcon(
+                          AssetImage("assets/icons/rate_us.png"),
+                          color: Color(0xFF69A03A),
+                          size: 36,
+                        ),
+                        title: Text(
+                          ' Rate us',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // Refer a Friend
+                  Container(
+                      alignment: Alignment.bottomCenter,
+                      color: Colors.white,
+                      height: size.height * 0.074,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.share,
+                          size: size.width * 0.075,
+                          color: Color(0xFF69A03A),
+                        ),
+                        title: Text(
+                          'Refer a Friend',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // Help
+                  InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HelpScreen())),
+                    child: Container(
+                        alignment: Alignment.bottomCenter,
+                        color: Colors.white,
+                        height: size.height * 0.074,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.help,
+                            size: size.width * 0.075,
+                            color: Color(0xFF69A03A),
+                          ),
+                          title: Text(
+                            'Help',
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        )),
+                  ),
+                  Container(
+                      color: Colors.grey[300], height: heightDevice(0.004)),
+                  // Log Out
+                  Container(
+                      alignment: Alignment.topCenter,
+                      color: Colors.white,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.logout_rounded,
+                          size: size.width * 0.075,
+                          color: Color(0xFF69A03A),
+                        ),
+                        title: Text(
+                          'Log Out',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      )),
+                ],
               ),
-              SizedBox(height: 1),
-              // Favourites
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: size.height * 0.074,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.favorite,
-                      size: size.width * 0.075,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'Favourites',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-              SizedBox(height: 1),
-              // Settings
-              InkWell(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SettingScreen())),
-                child: Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: EdgeInsets.only(bottom: 8),
-                    color: Colors.white,
-                    height: size.height * 0.074,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.settings,
-                        size: size.width * 0.075,
-                        color: Color(0xFF69A03A),
-                      ),
-                      title: Text(
-                        'Settings',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    )),
-              ),
-              SizedBox(height: 1),
-              // My Cart
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: size.height * 0.074,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.shopping_cart,
-                      size: size.width * 0.075,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'My Cart',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-              SizedBox(height: 1),
-              // Rate us
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: size.height * 0.074,
-                  child: ListTile(
-                    leading: ImageIcon(
-                      AssetImage("assets/icons/rate_us.png"),
-                      color: Color(0xFF69A03A),
-                      size: 36,
-                    ),
-                    title: Text(
-                      ' Rate us',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-              SizedBox(height: 1),
-              // Refer a Friend
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 8),
-                  color: Colors.white,
-                  height: size.height * 0.074,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.share,
-                      size: size.width * 0.075,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'Refer a Friend',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-              SizedBox(height: 2),
-              // Help
-              InkWell(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HelpScreen())),
-                child: Container(
-                    alignment: Alignment.bottomCenter,
-                    padding: EdgeInsets.only(bottom: 8),
-                    color: Colors.white,
-                    height: size.height * 0.074,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.help,
-                        size: size.width * 0.075,
-                        color: Color(0xFF69A03A),
-                      ),
-                      title: Text(
-                        'Help',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    )),
-              ),
-              SizedBox(height: 1),
-              // Log Out
-              Container(
-                  alignment: Alignment.bottomCenter,
-                  padding: EdgeInsets.only(bottom: 20),
-                  color: Colors.white,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.logout_rounded,
-                      size: size.width * 0.075,
-                      color: Color(0xFF69A03A),
-                    ),
-                    title: Text(
-                      'Log Out',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  )),
-            ],
+            ),
           ),
         ],
       ),

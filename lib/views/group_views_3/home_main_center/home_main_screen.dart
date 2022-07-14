@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/home_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/profile_screen.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/shopping_cart_page/shopping_screen.dart';
 
 class HomeMainScreen extends StatefulWidget {
   const HomeMainScreen({Key? key}) : super(key: key);
@@ -16,10 +17,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    Text("None"),
     FavouriteScreen(),
     ProfileScreen(),
   ];
@@ -111,7 +109,14 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                 currentIndex: _selectedIndex,
                 selectedItemColor: Color(0xFF769E49),
                 unselectedItemColor: Color(0xFF838181),
-                onTap: _onItemTapped,
+                onTap: (index) {
+                  index != 1
+                      ? _onItemTapped(index)
+                      : Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ShoppingScreen()));
+                },
               ),
             ),
           ),
