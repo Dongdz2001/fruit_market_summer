@@ -24,7 +24,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         title: Transform(
           // you can forcefully translate values left side using Transform
           transform: Matrix4.translationValues(
-              -witdthDevice(0.09), heightDevice(0.048), 0.0),
+              -witdthDevice(0.09), heightDevice(0.023), 0.0),
           child: Text(
             "My Order",
             style: TextStyle(
@@ -36,7 +36,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
         ),
         leading: Transform(
           // you can forcefully translate values left side using Transform
-          transform: Matrix4.translationValues(0.0, heightDevice(0.05), 0.0),
+          transform: Matrix4.translationValues(0.0, heightDevice(0.023), 0.0),
           child: GestureDetector(
             child: Icon(
               Icons.arrow_back_ios,

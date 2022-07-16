@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
 import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/add_card_screen.dart';
+import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/pay_now_screen.dart';
 import '../../../../controller/input_data/init_user.dart';
 import 'dart:math';
 
@@ -731,7 +732,11 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.pin_drop_outlined),
+                  ImageIcon(
+                    AssetImage("assets/icons/pin_fill.png"),
+                    color: Colors.black,
+                    size: 20,
+                  ),
                   DropdownButton<String>(
                     underline: Container(color: Colors.white),
                     value: dropdownValue,
@@ -796,7 +801,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => AddCardScreen()));
+                                    builder: (context) => PayNowScreen()));
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xFF769E49),

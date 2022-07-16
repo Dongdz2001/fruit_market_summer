@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
+import 'package:fruit_market_summer/views/group_views_4/loading_pay/loading_verifyle_pay_screen.dart';
 
 class AddCardScreen extends StatefulWidget {
   const AddCardScreen({Key? key}) : super(key: key);
@@ -435,8 +436,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
             height: heightDevice(0.07),
             child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.of(context).pushReplacement(
-                  //     MaterialPageRoute(builder: (_) => FavouriteScreen()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (_) => LoadingVerifylePayScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFF69A03A),
