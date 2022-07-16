@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_1/page_views/onboarding_screen.dart';
 
 class Slapscreen extends StatefulWidget {
@@ -27,7 +28,6 @@ class _SlapscreenState extends State<Slapscreen> {
       color: Color.fromRGBO(105, 160, 58, 1),
       child: Stack(
         children: [
-          SizedBox(height: 280),
           Center(
             child: RichText(
               text: TextSpan(
@@ -46,9 +46,10 @@ class _SlapscreenState extends State<Slapscreen> {
             ),
           ),
           Positioned(
-            bottom: -54,
+            bottom: -55,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
+                height: heightDevice(heightDevice(0.00067)),
                 child: Image.asset(
                   "assets/image_slap_screen/mix_fruit_png_11.png",
                   fit: BoxFit.contain,

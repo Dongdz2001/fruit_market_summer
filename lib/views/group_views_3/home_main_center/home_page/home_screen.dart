@@ -35,15 +35,15 @@ class _HomeScreenState extends State<HomeScreen>
           body: Column(
             children: [
               Container(
-                height: heightDevice(0.1),
+                height: heightDevice(0.04),
                 color: Color(0xFF69A03A),
               ),
               SizedBox(
-                height: heightDevice(0.085),
+                height: heightDevice(0.04),
               ),
               // give the tab bar a height [can change hheight to preferred height]
               Container(
-                height: heightDevice(0.085),
+                height: heightDevice(0.043),
                 decoration: BoxDecoration(
                   color: Theme.of(context).scaffoldBackgroundColor,
                   borderRadius: BorderRadius.circular(
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
               ),
               SizedBox(
-                height: heightDevice(0.03),
+                height: heightDevice(0.01),
               ),
               // tab bar view here
               Expanded(
@@ -112,11 +112,11 @@ class _HomeScreenState extends State<HomeScreen>
 
         //Search listitle
         Positioned(
-          top: heightDevice(0.02),
+          top: heightDevice(0.0001),
           left: witdthDevice(0.015),
           child: SizedBox(
             width: witdthDevice(0.97),
-            height: heightDevice(0.14),
+            height: heightDevice(0.07),
             child: Card(
               child: new ListTile(
                 minLeadingWidth: 10,

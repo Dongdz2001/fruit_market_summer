@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/enter_basic_info.dart';
 import 'package:fruit_market_summer/model/widget_custom/keyborad.dart';
 import 'package:pinput/pinput.dart';
@@ -10,8 +11,8 @@ class PinputOTPScreen extends StatelessWidget {
     bool _flagverifyle = false;
     TextEditingController _edtNumberController = TextEditingController();
     final defaultPinTheme = PinTheme(
-      width: 56,
-      height: 56,
+      width: witdthDevice(0.16),
+      height: heightDevice(0.08),
       textStyle: TextStyle(
           fontSize: 20,
           color: Color.fromRGBO(30, 60, 87, 1),

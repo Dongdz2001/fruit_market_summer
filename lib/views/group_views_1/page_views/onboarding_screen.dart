@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_1/page_views/intro_page_1.dart';
 import 'package:fruit_market_summer/views/group_views_1/page_views/intro_page_2.dart';
 import 'package:fruit_market_summer/views/group_views_1/page_views/intro_page_3.dart';
@@ -39,13 +40,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
           Positioned(
-            left: 318,
-            top: 90,
+            right: witdthDevice(0.12),
+            top: heightDevice(0.1),
             child: GestureDetector(
               child: Text(
                 "Skips",
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 16,
                   fontFamily: "poppins",
                   color: Color(0xFF898989),
                 ),
@@ -57,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Container(
-            alignment: Alignment(0, 0.7),
+            alignment: Alignment(0, heightDevice(0.00065)),
             child: SmoothPageIndicator(
               controller: _controllerPage,
               count: 3,
@@ -71,10 +72,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Container(
-            alignment: Alignment(0, 0.9),
+            alignment: Alignment(0, heightDevice(0.0011)),
             child: SizedBox(
-              width: 148,
-              height: 46,
+              width: witdthDevice(0.35),
+              height: heightDevice(0.059),
               child: ElevatedButton(
                 onPressed: () {
                   if (onLastPage) {

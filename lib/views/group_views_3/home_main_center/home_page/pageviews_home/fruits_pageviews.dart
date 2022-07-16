@@ -50,7 +50,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.565),
+                  height: heightDevice(0.31),
                   child: ListView.builder(
                       itemCount: listOrganicFruits.length,
                       scrollDirection: Axis.horizontal,
@@ -69,7 +69,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.365),
+                                      height: heightDevice(0.2),
                                       width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
@@ -83,7 +83,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        height: heightDevice(0.15),
+                                        height: heightDevice(0.08),
                                         width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
@@ -188,7 +188,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                             ),
                           ))),
               SizedBox(
-                height: heightDevice(0.03),
+                height: heightDevice(0.01),
               ),
               // List Mixed Fruits Pack (10% Off)
               RichText(
@@ -216,7 +216,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.565),
+                  height: heightDevice(0.31),
                   child: ListView.builder(
                       itemCount: listMixedFruitsPack.length,
                       scrollDirection: Axis.horizontal,
@@ -235,7 +235,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.365),
+                                      height: heightDevice(0.2),
                                       width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
@@ -249,7 +249,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        height: heightDevice(0.15),
+                                        height: heightDevice(0.08),
                                         width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
@@ -355,7 +355,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                             ),
                           ))),
               SizedBox(
-                height: heightDevice(0.03),
+                height: heightDevice(0.01),
               ),
               // List Allium Fruits (20% Off)
               RichText(
@@ -383,7 +383,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.565),
+                  height: heightDevice(0.31),
                   child: ListView.builder(
                       itemCount: listStoneFruits.length,
                       scrollDirection: Axis.horizontal,
@@ -402,7 +402,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.365),
+                                      height: heightDevice(0.2),
                                       width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
@@ -416,7 +416,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        height: heightDevice(0.15),
+                                        height: heightDevice(0.08),
                                         width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {
@@ -522,7 +522,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                             ),
                           ))),
               SizedBox(
-                height: heightDevice(0.03),
+                height: heightDevice(0.01),
               ),
               // List Root Vegetabels (5% Off)
               RichText(
@@ -550,7 +550,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                 ),
               ),
               Container(
-                  height: heightDevice(0.565),
+                  height: heightDevice(0.31),
                   child: ListView.builder(
                       itemCount: listMelons.length,
                       scrollDirection: Axis.horizontal,
@@ -569,7 +569,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                     Container(
                                       margin: const EdgeInsets.only(
                                           right: 15, top: 10, bottom: 10),
-                                      height: heightDevice(0.365),
+                                      height: heightDevice(0.2),
                                       width: witdthDevice(0.3),
                                       child: ClipRRect(
                                         borderRadius:
@@ -582,7 +582,7 @@ class _FruitsPageviewsState extends State<FruitsPageviews> {
                                       ),
                                     ),
                                     Positioned(
-                                        height: heightDevice(0.15),
+                                        height: heightDevice(0.08),
                                         width: witdthDevice(0.485),
                                         child: GestureDetector(
                                           onTap: () {

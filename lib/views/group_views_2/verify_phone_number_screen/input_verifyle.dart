@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/loading_verifyle.dart';
 import 'package:fruit_market_summer/model/widget_custom/keyborad.dart';
 
@@ -15,15 +16,15 @@ class InputVerifyle extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: 110,
+                height: heightDevice(0.2),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Stack(
                   children: [
                     Container(
-                      width: 60,
-                      height: 60,
+                      width: witdthDevice(0.15),
+                      height: heightDevice(0.075),
                       decoration: BoxDecoration(
                         border: Border.all(width: 1.5, color: Colors.grey),
                         borderRadius: BorderRadius.circular(15),
@@ -56,28 +57,27 @@ class InputVerifyle extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 80, bottom: 40),
-                child: SizedBox(
-                  width: 335,
-                  height: 52,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (_) => LoadingVerifyle()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF69A03A),
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(12.0),
-                        ),
+              SizedBox(height: heightDevice(0.08)),
+              SizedBox(
+                width: witdthDevice(0.85),
+                height: heightDevice(0.07),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (_) => LoadingVerifyle()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF69A03A),
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(12.0),
                       ),
-                      child: Text(
-                        "VERIFY",
-                        style: Theme.of(context).textTheme.headline1,
-                      )),
-                ),
+                    ),
+                    child: Text(
+                      "VERIFY",
+                      style: Theme.of(context).textTheme.headline1,
+                    )),
               ),
+              SizedBox(height: heightDevice(0.1)),
               KeyboradCustom.getWidget(_edtNumberController),
             ],
           ),

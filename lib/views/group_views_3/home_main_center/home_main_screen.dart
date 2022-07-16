@@ -43,7 +43,18 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                   )
                 : AppBar(
                     elevation: 0,
-                    toolbarHeight: heightDevice(0.146), // Set this height
+                    toolbarHeight: heightDevice(0.081), // Set this height
+                    actions: [
+                      IconButton(
+                        icon: const Icon(Icons.add_alert),
+                        tooltip: 'Nodification',
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Notthing information !')));
+                        },
+                      ),
+                    ],
                     flexibleSpace: Container(
                       color: Color(0xFF69A03A),
                       child: Column(

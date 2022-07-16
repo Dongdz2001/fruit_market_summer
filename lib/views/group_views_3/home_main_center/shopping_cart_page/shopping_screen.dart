@@ -26,14 +26,14 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
       backgroundColor: Colors.grey[100],
       appBar: PreferredSize(
           preferredSize:
-              Size.fromHeight(heightDevice(0.2)), // here the desired height
+              Size.fromHeight(heightDevice(0.09)), // here the desired height
           child: AppBar(
             elevation: 0,
             backgroundColor: Color(0xFF69A03A),
             title: Transform(
               // you can forcefully translate values left side using Transform
               transform: Matrix4.translationValues(
-                  -witdthDevice(0.09), heightDevice(0.048), 0.0),
+                  -witdthDevice(0.09), heightDevice(0.02), 0.0),
               child: Text(
                 "Shopping Cart",
                 style: TextStyle(
@@ -46,7 +46,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             leading: Transform(
               // you can forcefully translate values left side using Transform
               transform:
-                  Matrix4.translationValues(0.0, heightDevice(0.05), 0.0),
+                  Matrix4.translationValues(0.0, heightDevice(0.02), 0.0),
               child: GestureDetector(
                 child: Icon(
                   Icons.arrow_back_ios,
@@ -76,7 +76,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                       color: Color(0xFFE6E6E6),
                       width: MediaQuery.of(context).size.width,
                       child: Text(
-                        'Vegerables',
+                        'Vegetables',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       padding:
@@ -106,7 +106,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                         Container(
                                           margin: const EdgeInsets.only(
                                               right: 15, top: 5),
-                                          height: heightDevice(0.24),
+                                          height: heightDevice(0.125),
                                           width: witdthDevice(0.25),
                                           child: ClipRRect(
                                             borderRadius:
@@ -215,10 +215,10 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           width: witdthDevice(
                                                               0.08),
                                                           height: heightDevice(
-                                                              0.075),
+                                                              0.038),
                                                           padding:
                                                               EdgeInsets.only(
-                                                                  bottom: 9),
+                                                                  bottom: 10),
                                                           decoration:
                                                               BoxDecoration(
                                                             border: Border.all(
@@ -252,7 +252,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           width: witdthDevice(
                                                               0.08),
                                                           height: heightDevice(
-                                                              0.075),
+                                                              0.038),
                                                           decoration:
                                                               BoxDecoration(
                                                             border: Border.all(
@@ -321,7 +321,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                         Container(
                                           margin: const EdgeInsets.only(
                                               right: 15, top: 5),
-                                          height: heightDevice(0.24),
+                                          height: heightDevice(0.125),
                                           width: witdthDevice(0.25),
                                           child: ClipRRect(
                                             borderRadius:
@@ -431,7 +431,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           width: witdthDevice(
                                                               0.08),
                                                           height: heightDevice(
-                                                              0.075),
+                                                              0.038),
                                                           padding:
                                                               EdgeInsets.only(
                                                                   bottom: 9),
@@ -468,7 +468,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           width: witdthDevice(
                                                               0.08),
                                                           height: heightDevice(
-                                                              0.075),
+                                                              0.038),
                                                           decoration:
                                                               BoxDecoration(
                                                             border: Border.all(
@@ -537,7 +537,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                         Container(
                                           margin: const EdgeInsets.only(
                                               right: 15, top: 5),
-                                          height: heightDevice(0.24),
+                                          height: heightDevice(0.125),
                                           width: witdthDevice(0.25),
                                           child: ClipRRect(
                                             borderRadius:
@@ -646,7 +646,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           width: witdthDevice(
                                                               0.08),
                                                           height: heightDevice(
-                                                              0.075),
+                                                              0.038),
                                                           padding:
                                                               EdgeInsets.only(
                                                                   bottom: 9),
@@ -683,7 +683,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                           width: witdthDevice(
                                                               0.08),
                                                           height: heightDevice(
-                                                              0.075),
+                                                              0.038),
                                                           decoration:
                                                               BoxDecoration(
                                                             border: Border.all(
@@ -726,8 +726,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             Container(
               color: Colors.white,
               padding: EdgeInsets.symmetric(
-                  horizontal: witdthDevice(0.03),
-                  vertical: heightDevice(0.015)),
+                  horizontal: witdthDevice(0.03), vertical: heightDevice(0.01)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -772,7 +771,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
               bottom: 0,
               child: Container(
                 alignment: Alignment.topCenter,
-                height: heightDevice(0.14),
+                height: heightDevice(0.08),
                 width: MediaQuery.of(context).size.width,
                 color: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -790,7 +789,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                     SizedBox(width: MediaQuery.of(context).size.width * 0.3),
                     SizedBox(
                       width: witdthDevice(0.3),
-                      height: heightDevice(0.1),
+                      height: heightDevice(0.053),
                       child: ElevatedButton(
                           onPressed: () {
                             // Navigator.of(context).pushReplacement(MaterialPageRoute(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_main_screen.dart';
 
 class EnterBasicInfo extends StatelessWidget {
@@ -12,7 +13,7 @@ class EnterBasicInfo extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 100,
+                height: heightDevice(0.15),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 200),
@@ -20,7 +21,7 @@ class EnterBasicInfo extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3),
               ),
               SizedBox(
-                height: 40,
+                height: heightDevice(0.06),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -72,8 +73,8 @@ class EnterBasicInfo extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 40, bottom: 10),
                 child: SizedBox(
-                  width: 335,
-                  height: 52,
+                  width: witdthDevice(0.89),
+                  height: heightDevice(0.074),
                   child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(

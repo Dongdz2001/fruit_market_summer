@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 
 class IntroPage2 extends StatefulWidget {
   const IntroPage2({Key? key}) : super(key: key);
@@ -15,25 +16,26 @@ class _IntroPage2State extends State<IntroPage2> {
 
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 200),
-            child: Image.asset("assets/image_page_views/pageviews_2.png"),
+          SizedBox(
+              height: heightDevice(0.3),
+              width: witdthDevice(0.8),
+              child: Image.asset(
+                "assets/image_page_views/pageviews_2.png",
+                fit: BoxFit.fitWidth,
+              )),
+          SizedBox(height: heightDevice(0.08)),
+          Text(
+            "Delivery on the way",
+            style: Theme.of(context).textTheme.headline3,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Text(
-              "Delivery on the way",
-              style: Theme.of(context).textTheme.headline3,
-            ),
+          SizedBox(height: heightDevice(0.01)),
+          Text(
+            "Get your order by speed delivery",
+            style: Theme.of(context).textTheme.headline2,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Text(
-              "Get your order by speed delivery",
-              style: Theme.of(context).textTheme.headline2,
-            ),
-          ),
+          SizedBox(height: heightDevice(0.01)),
         ],
       ),
     );

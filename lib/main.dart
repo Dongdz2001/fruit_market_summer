@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     widthSizeDevide = MediaQuery.of(context).size.width;
-    heightSizeDevide = MediaQuery.of(context).size.width;
+    heightSizeDevide = MediaQuery.of(context).size.height;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //

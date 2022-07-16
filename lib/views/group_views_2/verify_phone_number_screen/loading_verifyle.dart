@@ -30,25 +30,23 @@ class _LoadingVerifyleState extends State<LoadingVerifyle> {
         child: Column(
           children: [
             SizedBox(
-              height: heightDevice(0.6),
+              height: heightDevice(0.26),
             ),
             SizedBox(
               height: heightDevice(0.25),
               width: witdthDevice(0.25),
               child: Rotate(
                   repeat: true,
-                  child: Image.asset("assets/icons/verifyle.png")),
+                  child: Image.asset(
+                      fit: BoxFit.contain, "assets/icons/verifyle.png")),
             ),
             SizedBox(
-              height: heightDevice(0.15),
+              height: heightDevice(0.008),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
-              child: Text(
-                "Verifying Your Mobile Number",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline4,
-              ),
+            Text(
+              "Verifying Your Mobile Number",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline4,
             )
           ],
         ),

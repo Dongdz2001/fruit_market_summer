@@ -28,22 +28,17 @@ class _FinishVerifyleState extends State<FinishVerifyle> {
         child: Column(
           children: [
             SizedBox(
-              height: heightDevice(0.55),
+              height: heightDevice(0.2),
             ),
             SizedBox(
-                height: heightDevice(0.35),
-                width: witdthDevice(0.4),
-                child: Image.asset("assets/icons/finish_verifyle.png")),
-            SizedBox(
-              height: heightDevice(0.12),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
-              child: Text(
-                "Verification Code Send on \n your Registered Mobile Number ",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline4,
-              ),
+                height: heightDevice(0.3),
+                width: witdthDevice(0.35),
+                child: Image.asset(
+                    fit: BoxFit.contain, "assets/icons/finish_verifyle.png")),
+            Text(
+              "Verification Code Send on \n your Registered Mobile Number ",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline4,
             )
           ],
         ),

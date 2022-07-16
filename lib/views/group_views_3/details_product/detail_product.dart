@@ -12,13 +12,13 @@ class DetailProduct extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize:
-              Size.fromHeight(heightDevice(0.2)), // here the desired height
+              Size.fromHeight(heightDevice(0.1)), // here the desired height
           child: AppBar(
             backgroundColor: Color(0xFF69A03A),
             title: Transform(
               // you can forcefully translate values left side using Transform
               transform: Matrix4.translationValues(
-                  -witdthDevice(0.09), heightDevice(0.048), 0.0),
+                  -witdthDevice(0.09), heightDevice(0.027), 0.0),
               child: Text(
                 "DETAILS",
                 style: TextStyle(
@@ -31,7 +31,7 @@ class DetailProduct extends StatelessWidget {
             leading: Transform(
               // you can forcefully translate values left side using Transform
               transform:
-                  Matrix4.translationValues(0.0, heightDevice(0.05), 0.0),
+                  Matrix4.translationValues(0.0, heightDevice(0.027), 0.0),
               child: GestureDetector(
                 child: Icon(
                   Icons.arrow_back_ios,
@@ -49,7 +49,7 @@ class DetailProduct extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: heightDevice(0.45),
+                  height: heightDevice(0.25),
                   width: witdthDevice(1),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(18.0),
@@ -112,7 +112,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(0)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -123,7 +123,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(1)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -134,7 +134,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(2)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -145,7 +145,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(3)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -156,7 +156,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(4)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -167,7 +167,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(5)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -178,7 +178,7 @@ class DetailProduct extends StatelessWidget {
                         Text('    ${tempFood.getItemNutition(6)}'),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.01),
+                    SizedBox(height: size.height * 0.015),
                     Row(
                       children: [
                         Icon(
@@ -212,7 +212,7 @@ class DetailProduct extends StatelessWidget {
                         ),
                         SizedBox(
                           width: witdthDevice(0.3),
-                          height: heightDevice(0.11),
+                          height: heightDevice(0.05),
                           child: ElevatedButton(
                               onPressed: () {
                                 // Navigator.of(context).pushReplacement(MaterialPageRoute(

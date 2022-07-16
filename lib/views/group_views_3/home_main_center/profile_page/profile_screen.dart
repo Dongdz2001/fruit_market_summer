@@ -47,8 +47,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             height: size.width * 0.1,
                           ),
                         ),
-                        width: size.width * 0.18,
-                        height: size.width * 0.18,
+                        width: size.width * 0.22,
+                        height: size.width * 0.22,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(360),
                           color: Colors.white,
@@ -108,7 +108,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         )),
                   ),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // Favourites
                   Container(
                       alignment: Alignment.bottomCenter,
@@ -126,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       )),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // Settings
                   InkWell(
                     onTap: () => Navigator.push(
@@ -150,7 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         )),
                   ),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // My Cart
                   Container(
                       alignment: Alignment.bottomCenter,
@@ -168,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       )),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // Rate us
                   Container(
                       alignment: Alignment.bottomCenter,
@@ -186,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       )),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // Refer a Friend
                   Container(
                       alignment: Alignment.bottomCenter,
@@ -204,7 +204,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       )),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // Help
                   InkWell(
                     onTap: () => Navigator.push(context,
@@ -226,7 +226,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         )),
                   ),
                   Container(
-                      color: Colors.grey[300], height: heightDevice(0.004)),
+                      color: Colors.grey[300], height: heightDevice(0.002)),
                   // Log Out
                   Container(
                       alignment: Alignment.topCenter,
