@@ -72,6 +72,7 @@ flutter:
     - assets/image_page_views/
     - assets/image_home/
     - assets/icons/
+    - assets/image_pay/
     - assets/image_avatar/
     - assets/image_keyboard_button/
     - assets/image_food/

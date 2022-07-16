@@ -19,14 +19,15 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     Text("None"),
-    FavouriteScreen(),
+    FavouriteScreen(
+      flagAppBar: true,
+    ),
     ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      print(_selectedIndex);
     });
   }
 

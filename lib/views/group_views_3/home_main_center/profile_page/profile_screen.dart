@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import 'package:fruit_market_summer/model/icons_custom/my_flutter_app_icons.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/help/help_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/my_order/my_order_screen.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/setting_screen.dart';
@@ -110,21 +111,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Container(
                       color: Colors.grey[300], height: heightDevice(0.002)),
                   // Favourites
-                  Container(
-                      alignment: Alignment.bottomCenter,
-                      color: Colors.white,
-                      height: size.height * 0.074,
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.favorite,
-                          size: size.width * 0.075,
-                          color: Color(0xFF69A03A),
-                        ),
-                        title: Text(
-                          'Favourites',
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                      )),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FavouriteScreen(
+                                  flagAppBar: false,
+                                ))),
+                    child: Container(
+                        alignment: Alignment.bottomCenter,
+                        color: Colors.white,
+                        height: size.height * 0.074,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.favorite,
+                            size: size.width * 0.075,
+                            color: Color(0xFF69A03A),
+                          ),
+                          title: Text(
+                            'Favourites',
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        )),
+                  ),
                   Container(
                       color: Colors.grey[300], height: heightDevice(0.002)),
                   // Settings

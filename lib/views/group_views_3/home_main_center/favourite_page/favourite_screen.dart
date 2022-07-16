@@ -6,35 +6,50 @@ import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import '../../../../controller/input_data/init_vegetable.dart';
 
 class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({Key? key}) : super(key: key);
+  final flagAppBar;
+  const FavouriteScreen({Key? key, required this.flagAppBar}) : super(key: key);
 
   @override
   _FavouriteScreenState createState() => _FavouriteScreenState();
 }
 
 class _FavouriteScreenState extends State<FavouriteScreen> {
+  var flagAppBar;
+
+  @override
+  void initState() {
+    super.initState();
+    flagAppBar = widget.flagAppBar;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(heightDevice(0.04)),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: Color(0xFF69A03A),
-          title: Transform(
-            // you can forcefully translate values left side using Transform
-            transform: Matrix4.translationValues(0, -heightDevice(0.01), 0.0),
-            child: Text(
-              "Favourites",
-              style: TextStyle(
-                fontFamily: "poppins",
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+      appBar: flagAppBar
+          ? PreferredSize(
+              preferredSize: Size.fromHeight(heightDevice(0.04)),
+              child: AppBar(
+                elevation: 0,
+                backgroundColor: Color(0xFF69A03A),
+                title: Transform(
+                  // you can forcefully translate values left side using Transform
+                  transform:
+                      Matrix4.translationValues(0, -heightDevice(0.01), 0.0),
+                  child: Text(
+                    "Favourites",
+                    style: TextStyle(
+                      fontFamily: "poppins",
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
+            )
+          : AppBar(
+              title: Text("Favourites"),
+              backgroundColor: Color(0xFF69A03A),
             ),
-          ),
-        ),
-      ),
       body: Container(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         Expanded(

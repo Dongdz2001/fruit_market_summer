@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
+import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/add_card_screen.dart';
 import '../../../../controller/input_data/init_user.dart';
 import 'dart:math';
 
@@ -792,8 +793,10 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                       height: heightDevice(0.053),
                       child: ElevatedButton(
                           onPressed: () {
-                            // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            //     builder: (_) => HomeMainScreen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddCardScreen()));
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xFF769E49),
