@@ -1,3 +1,4 @@
+import 'package:fruit_market_summer/model/credit_card/creditCard.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
 
 class User {
@@ -20,6 +21,12 @@ class User {
   List<Food> _listFavoutrite = [];
   get getListFavoutrite => this._listFavoutrite;
   set setListFavoutrite(List<Food> value) => this._listFavoutrite = value;
+
+  // getter setter Credit card number
+  CreditCard userCreditCard = CreditCard();
+  CreditCard get getUserCreditCard => this.userCreditCard;
+  set setUserCreditCard(CreditCard userCreditCard) =>
+      this.userCreditCard = userCreditCard;
 
   //list order food for one user
   List<Food> _listOrder = [];
@@ -99,5 +106,9 @@ class User {
   }
 
   // contructor for Users
-  User({required this.name, required this.email, required this.imageSrc});
+  User({
+    required this.name,
+    required this.email,
+    required this.imageSrc,
+  });
 }

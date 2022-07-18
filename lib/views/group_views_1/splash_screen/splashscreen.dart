@@ -26,7 +26,9 @@ class _SlapscreenState extends State<Slapscreen> {
   Widget build(BuildContext context) {
     return Container(
       color: Color.fromRGBO(105, 160, 58, 1),
-      child: Stack(
+      height: heightDevice(1),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Center(
             child: RichText(
@@ -45,16 +47,15 @@ class _SlapscreenState extends State<Slapscreen> {
               ),
             ),
           ),
-          Positioned(
-            bottom: -55,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: heightDevice(heightDevice(0.00067)),
-                child: Image.asset(
-                  "assets/image_slap_screen/mix_fruit_png_11.png",
-                  fit: BoxFit.contain,
-                )),
+          SizedBox(
+            height: heightDevice(0.2),
           ),
+          SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Image.asset(
+                "assets/image_slap_screen/mix_fruit_png_11.png",
+                fit: BoxFit.fitWidth,
+              )),
         ],
       ),
     );

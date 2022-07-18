@@ -108,10 +108,11 @@ class PayNowScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.push(
+                      onTap: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AddCardScreen())),
+                            builder: (context) => AddCardScreen(),
+                          )),
                       child: Text(
                         'ADD NEW CARD',
                         style: TextStyle(
@@ -138,15 +139,15 @@ class PayNowScreen extends StatelessWidget {
                       )),
                   title: Transform.translate(
                       offset: Offset(-16, -10),
-                      child: const Text(
-                        '***********************4356',
+                      child: Text(
+                        '**************${manish_chutake.getUserCreditCard.getItemPart4CharacterCardNumber(3)}',
                         style:
                             TextStyle(fontSize: 14, color: Color(0xFF909090)),
                       )),
                   subtitle: Transform.translate(
                       offset: Offset(-16, -18),
                       child: Text(
-                        '${manish_chutake.getName} ',
+                        '${manish_chutake.getUserCreditCard.getCardholderName} ',
                         style: TextStyle(fontSize: 12),
                       )),
                 ),

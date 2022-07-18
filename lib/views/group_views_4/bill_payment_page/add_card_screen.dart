@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:fruit_market_summer/controller/input_data/init_user.dart';
+import 'package:fruit_market_summer/model/credit_card/creditCard.dart';
 import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
+import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/pay_now_screen.dart';
 import 'package:fruit_market_summer/views/group_views_4/loading_pay/loading_verifyle_pay_screen.dart';
 
 class AddCardScreen extends StatefulWidget {
@@ -17,22 +20,28 @@ class _AddCardScreenState extends State<AddCardScreen> {
   int nextCardNumber = 0;
   String temp = "";
   bool checkFlag = true;
-
   int startCusor = 0;
+  // bool flagAddCardCredit = false;
+
   @override
   void initState() {
     // TODO: implement initState
+    // flagAddCardCredit = widget.flagAddCard;
     super.initState();
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 8; i++) {
       listEdtController.add(new TextEditingController());
+    }
+    for (var i = 0; i < 4; i++) {
       listfocus.add(new FocusNode());
     }
   }
 
   @override
   void dispose() {
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 8; i++) {
       listEdtController[i].dispose();
+    }
+    for (var i = 0; i < 4; i++) {
       listfocus[i].dispose();
     }
     super.dispose();
@@ -49,7 +58,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
             height: heightDevice(0.125),
             color: Color(0xFF69A03A),
             child: GestureDetector(
-              onTap: () => Navigator.pop(context),
+              onTap: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => PayNowScreen())),
               child: ListTile(
                 leading: Icon(
                   Icons.arrow_back_ios,
@@ -93,6 +103,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: TextField(
+              controller: listEdtController[4],
               enableSuggestions: false,
               autocorrect: false,
               style: TextStyle(fontSize: 18),
@@ -309,10 +320,13 @@ class _AddCardScreenState extends State<AddCardScreen> {
               SizedBox(
                 width: witdthDevice(0.538),
                 child: TextField(
+                  controller: listEdtController[5],
                   enableSuggestions: false,
                   autocorrect: false,
+                  maxLength: 10,
                   style: TextStyle(fontSize: 18),
                   decoration: new InputDecoration(
+                    counter: Offstage(),
                     contentPadding:
                         EdgeInsets.only(left: 15, bottom: 0, top: 0),
                     focusedBorder: OutlineInputBorder(
@@ -328,13 +342,21 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   ),
                 ),
               ),
+              // Valided Year Credit Card
               SizedBox(
                 width: witdthDevice(0.3),
                 child: TextField(
+                  controller: listEdtController[6],
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp('[0-9]')),
+                  ],
+                  maxLength: 4,
                   enableSuggestions: false,
                   autocorrect: false,
                   style: TextStyle(fontSize: 18),
                   decoration: new InputDecoration(
+                    counter: Offstage(),
                     contentPadding:
                         EdgeInsets.only(left: 15, bottom: 0, top: 0),
                     focusedBorder: OutlineInputBorder(
@@ -376,10 +398,17 @@ class _AddCardScreenState extends State<AddCardScreen> {
               SizedBox(
                 width: witdthDevice(0.3),
                 child: TextField(
+                  controller: listEdtController[7],
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp('[0-9]')),
+                  ],
+                  maxLength: 3,
                   enableSuggestions: false,
                   autocorrect: false,
                   style: TextStyle(fontSize: 18),
                   decoration: new InputDecoration(
+                    counter: Offstage(),
                     contentPadding:
                         EdgeInsets.only(left: 15, bottom: 0, top: 0),
                     focusedBorder: OutlineInputBorder(
@@ -431,13 +460,35 @@ class _AddCardScreenState extends State<AddCardScreen> {
               ),
             ],
           ),
+
+          // ADD CARD BUTTON
           SizedBox(
             width: witdthDevice(0.89),
             height: heightDevice(0.07),
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (_) => LoadingVerifylePayScreen()));
+                  setState(() {
+                    // add infomation Credit Card for user
+                    String resultCardHolderName = listEdtController[4].text;
+                    String resultCardNumber =
+                        "${listEdtController[0].text + listEdtController[1].text + listEdtController[2].text + listEdtController[3].text}";
+                    String resultValidThru = listEdtController[5].text;
+                    int resultValidYear = int.parse(listEdtController[6].text);
+                    int resCvc = int.parse(listEdtController[7].text);
+                    manish_chutake.setUserCreditCard = new CreditCard(
+                        cardholderName: resultCardHolderName,
+                        cardNumber: resultCardNumber,
+                        dateMounth: resultValidThru,
+                        validThruYear: resultValidYear,
+                        cardVerificationValue: resCvc);
+                  });
+
+                  // push new screen
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PayNowScreen(),
+                      ));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFF69A03A),
