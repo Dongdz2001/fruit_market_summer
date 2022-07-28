@@ -46,6 +46,7 @@ class User {
   // metod add , get , remove for list order food
   int getLengtListOrder() => this._listOrder.length;
   bool isInvalidIndexItemOrder(int index) => index < _listOrder.length;
+  // add multi product from favourite screen to shoping cart
   void addItemListOrder(Food? food) {
     if (_listOrder.length == 0) {
       this._listOrder.add(Food.clone(food!)..setAmount = food.getAmount);
@@ -67,6 +68,29 @@ class User {
     }
   }
 
+  // add 1 product from detail to shoping cart
+  void addItemDetail(Food? food) {
+    if (_listOrder.length == 0) {
+      this._listOrder.add(Food.clone(food!)..setAmount = 1);
+      // this._list_quantity_per_product.add(food.getAmount);
+    } else {
+      bool _flag = true;
+      for (var i = 0; i < _listOrder.length; i++) {
+        if (_listOrder[i].getName == food!.getName &&
+            this._listOrder[i].getType == food.getType!) {
+          Food temp = Food.clone(food)..setAmount = 1;
+          this._listOrder[i].setAmount = this._listOrder[i].getAmount +
+              int.parse(temp.getAmount.toString());
+          _flag = !_flag;
+          break;
+        }
+      }
+      if (_flag) {
+        this._listOrder.add(Food.clone(food!)..setAmount = 1);
+      }
+    }
+  }
+
   Food getItemListOrder(int index) => this._listOrder[index];
 
   void removeItemListOrder(int index) {
@@ -79,6 +103,16 @@ class User {
   void removeItemListOrderByName(String itemName) {
     for (var i = 0; i < this._listOrder.length; i++) {
       if (this._listOrder[i].getName == itemName) {
+        this._listOrder.removeAt(i);
+        break;
+      }
+    }
+  }
+
+  void removeItemListOrderByAmount() {
+    print("Clicked!");
+    for (var i = 0; i < this._listOrder.length; i++) {
+      if (this._listOrder[i].getAmount == 0) {
         this._listOrder.removeAt(i);
         break;
       }

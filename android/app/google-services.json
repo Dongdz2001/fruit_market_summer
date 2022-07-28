@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "629761674457",
+    "project_id": "notification1907",
+    "storage_bucket": "notification1907.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629761674457:android:bc753d693eeecf3077c2c8",
+        "android_client_info": {
+          "package_name": "com.example.app_mess_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629761674457-qrd3tf9973s2vqr9gv1s3n37i9b98pmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBStcHntmQonW2VOXhqlYe48gZdy2PXw1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629761674457-qrd3tf9973s2vqr9gv1s3n37i9b98pmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

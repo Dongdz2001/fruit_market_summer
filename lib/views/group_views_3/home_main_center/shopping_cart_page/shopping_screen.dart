@@ -209,10 +209,25 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                               0.3)),
                                                       // button down amount
                                                       InkWell(
-                                                        onTap: () => setState(
-                                                            () => listVeget[
-                                                                    index]
-                                                                .downAmount()),
+                                                        onTap: () =>
+                                                            setState(() {
+                                                          if (listVeget[index]
+                                                                  .getAmount >
+                                                              1) {
+                                                            listVeget[index]
+                                                                .downAmount();
+                                                            print(
+                                                                "check: ${listVeget[index].getAmount}");
+                                                          } else {
+                                                            manish_chutake
+                                                                .removeItemListOrderByName(
+                                                                    listVeget[
+                                                                            index]
+                                                                        .getName);
+                                                            listVeget.removeAt(
+                                                                index);
+                                                          }
+                                                        }),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -425,10 +440,27 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                               0.3)),
                                                       // button down amount
                                                       InkWell(
-                                                        onTap: () => setState(
-                                                            () => listDryFruit[
-                                                                    index]
-                                                                .downAmount()),
+                                                        onTap: () =>
+                                                            setState(() {
+                                                          if (listDryFruit[
+                                                                      index]
+                                                                  .getAmount >
+                                                              1) {
+                                                            listDryFruit[index]
+                                                                .downAmount();
+                                                            print(
+                                                                "check: ${listDryFruit[index].getAmount}");
+                                                          } else {
+                                                            manish_chutake
+                                                                .removeItemListOrderByName(
+                                                                    listDryFruit[
+                                                                            index]
+                                                                        .getName);
+                                                            listDryFruit
+                                                                .removeAt(
+                                                                    index);
+                                                          }
+                                                        }),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -640,10 +672,25 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                                                               0.3)),
                                                       // button down amount
                                                       InkWell(
-                                                        onTap: () => setState(
-                                                            () => listFruit[
-                                                                    index]
-                                                                .downAmount()),
+                                                        onTap: () =>
+                                                            setState(() {
+                                                          if (listFruit[index]
+                                                                  .getAmount >
+                                                              1) {
+                                                            listFruit[index]
+                                                                .downAmount();
+                                                            print(
+                                                                "check: ${listFruit[index].getAmount}");
+                                                          } else {
+                                                            manish_chutake
+                                                                .removeItemListOrderByName(
+                                                                    listFruit[
+                                                                            index]
+                                                                        .getName);
+                                                            listFruit.removeAt(
+                                                                index);
+                                                          }
+                                                        }),
                                                         child: Container(
                                                           width: witdthDevice(
                                                               0.08),
@@ -798,10 +845,18 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                       height: heightDevice(0.053),
                       child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PayNowScreen()));
+                            if (listDryFruit.length +
+                                    listDryFruit.length +
+                                    listVeget.length !=
+                                0) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => PayNowScreen()));
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('No Product')));
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xFF769E49),

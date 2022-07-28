@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:fruit_market_summer/controller/input_data/init_user.dart';
 import 'package:fruit_market_summer/model/food_class/food.dart';
+import 'package:fruit_market_summer/views/group_views_3/home_main_center/shopping_cart_page/shopping_screen.dart';
 
 class DetailProduct extends StatelessWidget {
   final Food tempFood;
@@ -215,8 +217,9 @@ class DetailProduct extends StatelessWidget {
                           height: heightDevice(0.05),
                           child: ElevatedButton(
                               onPressed: () {
-                                // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                                //     builder: (_) => HomeMainScreen()));
+                                manish_chutake.addItemDetail(tempFood);
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (_) => ShoppingScreen()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Color(0xFF769E49),
