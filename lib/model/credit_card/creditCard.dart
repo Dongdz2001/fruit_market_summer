@@ -28,7 +28,9 @@ class CreditCard {
 
   // get 4 character , exmaple a = "10010000" -> get(1) = "0000", get(0) = "1111" , else none
   String getItemPart4CharacterCardNumber(int i) {
-    if (i < 4) {
+    if (i < 4 &&
+        this.cardNumber != "0000000000000000" &&
+        this.cardNumber.length == 16) {
       String temp = this.cardNumber.toString();
       return temp.substring(i * 4, i * 4 + 4);
     }
@@ -37,7 +39,7 @@ class CreditCard {
 
   CreditCard(
       {this.cardholderName = "No name",
-      this.cardNumber = "000000000000",
+      this.cardNumber = "0000000000000000",
       this.dateMounth = "January",
       this.validThruYear = 2001,
       this.cardVerificationValue = 100});

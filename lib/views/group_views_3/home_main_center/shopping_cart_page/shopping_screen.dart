@@ -846,13 +846,14 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                       child: ElevatedButton(
                           onPressed: () {
                             if (listDryFruit.length +
-                                    listDryFruit.length +
+                                    listFruit.length +
                                     listVeget.length !=
                                 0) {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => PayNowScreen()));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const PayNowScreen()),
+                              );
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(content: Text('No Product')));
