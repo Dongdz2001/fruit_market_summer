@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/dry_fruits_pageviews.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/fruits_pageviews.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_page/pageviews_home/vegetables_pageviews.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_3/home_main_center/home_page/pageviews_home/dry_fruits_pageviews.dart';
+import 'package:page_views/views/group_views_3/home_main_center/home_page/pageviews_home/fruits_pageviews.dart';
+import 'package:page_views/views/group_views_3/home_main_center/home_page/pageviews_home/vegetables_pageviews.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

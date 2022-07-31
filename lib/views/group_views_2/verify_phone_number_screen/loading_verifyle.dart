@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/finish_verifyle.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/finish_verifyle.dart';
 import 'package:im_animations/im_animations.dart';
 
 class LoadingVerifyle extends StatefulWidget {
-  const LoadingVerifyle({Key? key}) : super(key: key);
+  final String phone;
+  const LoadingVerifyle({Key? key, required this.phone}) : super(key: key);
 
   @override
   State<LoadingVerifyle> createState() => _LoadingVerifyleState();
@@ -18,8 +19,10 @@ class _LoadingVerifyleState extends State<LoadingVerifyle> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => FinishVerifyle()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => FinishVerifyle(
+                phone: widget.phone,
+              )));
     });
   }
 

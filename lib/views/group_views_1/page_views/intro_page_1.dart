@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'onboarding_screen.dart';
 

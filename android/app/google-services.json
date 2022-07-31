@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "629761674457",
-    "project_id": "notification1907",
-    "storage_bucket": "notification1907.appspot.com"
+    "project_number": "87236299296",
+    "project_id": "foodappsummer",
+    "storage_bucket": "foodappsummer.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:629761674457:android:bc753d693eeecf3077c2c8",
+        "mobilesdk_app_id": "1:87236299296:android:97d76332901fa30f960a45",
         "android_client_info": {
-          "package_name": "com.example.app_mess_notification"
+          "package_name": "com.example.fruit_market_summer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "629761674457-qrd3tf9973s2vqr9gv1s3n37i9b98pmp.apps.googleusercontent.com",
+          "client_id": "87236299296-92mv2qh9jei6ocf20fucgq9rh49gldno.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fruit_market_summer",
+            "certificate_hash": "5a05eca018fd3f146fc967bde56808b71cab93fb"
+          }
+        },
+        {
+          "client_id": "87236299296-22hnev34q6nf59jl3b87lhfjt5jjlhhd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBStcHntmQonW2VOXhqlYe48gZdy2PXw1I"
+          "current_key": "AIzaSyDEHZOkDCNmQVQyVwxGAGqbcDNjfb3l1M8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "629761674457-qrd3tf9973s2vqr9gv1s3n37i9b98pmp.apps.googleusercontent.com",
+              "client_id": "87236299296-22hnev34q6nf59jl3b87lhfjt5jjlhhd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

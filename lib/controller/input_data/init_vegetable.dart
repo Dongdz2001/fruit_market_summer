@@ -1,4 +1,4 @@
-import 'package:fruit_market_summer/model/food_class/food.dart';
+import 'package:page_views/model/food_class/food.dart';
 
 // init Organic Vegetable
 Food brinjels_vegetable = new Food("Brinjels", "Organic Vegetable",

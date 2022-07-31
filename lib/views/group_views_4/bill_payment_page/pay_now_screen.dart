@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/input_data/init_user.dart';
-import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/add_card_screen.dart';
-import 'package:fruit_market_summer/views/group_views_4/loading_pay/loading_verifyle_pay_screen.dart';
+import 'package:page_views/controller/input_data/init_user.dart';
+import 'package:page_views/views/group_views_4/bill_payment_page/add_card_screen.dart';
+import 'package:page_views/views/group_views_4/loading_pay/loading_verifyle_pay_screen.dart';
 
 import '../../../controller/gobal_variable_food/sizeDevice.dart';
 

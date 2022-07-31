@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_1/page_views/onboarding_screen.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/input_verifyle.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_1/page_views/onboarding_screen.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/input_verifyle.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class HomeLoginScreen extends StatelessWidget {
+class HomeLoginScreen extends StatefulWidget {
   const HomeLoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeLoginScreen> createState() => _HomeLoginScreenState();
+}
+
+class _HomeLoginScreenState extends State<HomeLoginScreen> {
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  String error = '';
+  String verificationId = '';
+
+  bool isLoading = false;
+
+  void setIsLoading() {
+    setState(() {
+      isLoading = !isLoading;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,30 +65,50 @@ class HomeLoginScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextField(
-                    controller: _edt_number,
-                    decoration: new InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 31, 12, 237),
-                            width: 1.5),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 146, 137, 137),
-                            width: 1.5),
-                      ),
-                      hintText: 'Enter Your Mobile Number',
+                  controller: _edt_number,
+                  decoration: new InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 31, 12, 237), width: 1.5),
                     ),
-                    keyboardType: TextInputType.number,
-                    onSubmitted: (value) {
-                      if ((value.length == 12)) {
-                        Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (_) => InputVerifyle()));
-                        print("okkok1");
-                      }
-                    }),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 146, 137, 137),
+                          width: 1.5),
+                    ),
+                    hintText: 'Enter Your Mobile Number',
+                  ),
+                  keyboardType: TextInputType.none,
+                  onSubmitted: (value) async {
+                    // _phoneAuth(value);
+                    FirebaseAuth auth = FirebaseAuth.instance;
+
+                    await auth.verifyPhoneNumber(
+                      phoneNumber: "+1${value.toString()}",
+                      verificationCompleted:
+                          (PhoneAuthCredential credential) async {
+                        // ANDROID ONLY!
+
+                        // Sign the user in (or link) with the auto-generated credential
+                        await auth.signInWithCredential(credential);
+                      },
+                      codeAutoRetrievalTimeout: (String verificationId) {
+                        print("okookkkkk succed");
+                      },
+                      verificationFailed: (FirebaseAuthException error) {
+                        print("error : *********************\n\n $error");
+                      },
+                      codeSent:
+                          (String verificationId, int? forceResendingToken) {
+                        print("code is $verificationId");
+                      },
+                    );
+                  },
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => InputVerifyle())),
+                ),
               ),
               SizedBox(
                 height: heightDevice(0.1),

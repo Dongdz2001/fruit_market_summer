@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_1/page_views/onboarding_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_1/page_views/onboarding_screen.dart';
 
 class Slapscreen extends StatefulWidget {
   const Slapscreen({Key? key}) : super(key: key);

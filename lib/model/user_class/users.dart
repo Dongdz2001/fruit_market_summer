@@ -1,5 +1,5 @@
-import 'package:fruit_market_summer/model/credit_card/creditCard.dart';
-import 'package:fruit_market_summer/model/food_class/food.dart';
+import 'package:page_views/model/credit_card/creditCard.dart';
+import 'package:page_views/model/food_class/food.dart';
 
 class User {
   late String name;

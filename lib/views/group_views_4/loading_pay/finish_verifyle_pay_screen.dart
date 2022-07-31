@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/pinput_OTP_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_main_screen.dart';
-import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/pay_now_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/pinput_OTP_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/home_main_screen.dart';
+import 'package:page_views/views/group_views_4/bill_payment_page/pay_now_screen.dart';
 
 class FinishVerifylePayScreen extends StatefulWidget {
   const FinishVerifylePayScreen({Key? key}) : super(key: key);

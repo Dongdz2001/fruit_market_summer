@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/loading_verifyle.dart';
-import 'package:fruit_market_summer/model/widget_custom/keyborad.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/loading_verifyle.dart';
+import 'package:page_views/model/widget_custom/keyborad.dart';
 
 class InputVerifyle extends StatelessWidget {
   const InputVerifyle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    String? _verificationCode;
     TextEditingController _edtNumberController = TextEditingController();
     return Scaffold(
       body: Container(
@@ -63,8 +64,9 @@ class InputVerifyle extends StatelessWidget {
                 height: heightDevice(0.07),
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (_) => LoadingVerifyle()));
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (_) => LoadingVerifyle(
+                              phone: _edtNumberController.text)));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xFF69A03A),
@@ -78,7 +80,8 @@ class InputVerifyle extends StatelessWidget {
                     )),
               ),
               SizedBox(height: heightDevice(0.1)),
-              KeyboradCustom.getWidget(_edtNumberController),
+              KeyboradCustom.getWidget(_edtNumberController,
+                  LoadingVerifyle(phone: _edtNumberController.text), context),
             ],
           ),
         ),

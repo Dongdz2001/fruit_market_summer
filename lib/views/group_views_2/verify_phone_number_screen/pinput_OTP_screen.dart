@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/enter_basic_info.dart';
-import 'package:fruit_market_summer/model/widget_custom/keyborad.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/enter_basic_info.dart';
+import 'package:page_views/model/widget_custom/keyborad.dart';
 import 'package:pinput/pinput.dart';
 
-class PinputOTPScreen extends StatelessWidget {
-  const PinputOTPScreen({Key? key}) : super(key: key);
+class PinputOTPScreen extends StatefulWidget {
+  final String phone;
+  const PinputOTPScreen({Key? key, required this.phone}) : super(key: key);
+
+  @override
+  State<PinputOTPScreen> createState() => _PinputOTPScreenState();
+}
+
+class _PinputOTPScreenState extends State<PinputOTPScreen> {
+  String? _verificationCode;
+  bool _flagverifyle = false;
+  TextEditingController _edtNumberController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    bool _flagverifyle = false;
-    TextEditingController _edtNumberController = TextEditingController();
     final defaultPinTheme = PinTheme(
       width: witdthDevice(0.16),
       height: heightDevice(0.08),
@@ -69,7 +78,6 @@ class PinputOTPScreen extends StatelessWidget {
                 },
                 pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                 showCursor: true,
-                onCompleted: (pin) => print(pin),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 40, bottom: 10),
@@ -77,12 +85,35 @@ class PinputOTPScreen extends StatelessWidget {
                   width: 335,
                   height: 52,
                   child: ElevatedButton(
-                      onPressed: () {
-                        _flagverifyle
-                            ? Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (_) => EnterBasicInfo()))
-                            : _flagverifyle = false;
+                      onPressed: () async {
+                        if (_flagverifyle) {
+                          try {
+                            FirebaseAuth auth = FirebaseAuth.instance;
+                            await auth.setSettings(
+                                appVerificationDisabledForTesting: true);
+
+                            auth
+                                .signInWithCredential(
+                                    PhoneAuthProvider.credential(
+                                        verificationId: _verificationCode!,
+                                        smsCode:
+                                            _edtNumberController.text + "11"))
+                                .then((value) async {
+                              if (value.user != null) {
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => EnterBasicInfo()),
+                                    (route) => false);
+                              }
+                            });
+                          } catch (e) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(e.toString())));
+                          }
+                        } else {
+                          _flagverifyle = false;
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF69A03A),
@@ -111,11 +142,50 @@ class PinputOTPScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              KeyboradCustom.getWidget(_edtNumberController),
+              KeyboradCustom.getWidget(
+                  _edtNumberController, EnterBasicInfo(), context),
             ],
           ),
         ),
       ),
     );
+  }
+
+  _verifyPhone() async {
+    await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: '+1${widget.phone}',
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await FirebaseAuth.instance
+              .signInWithCredential(credential)
+              .then((value) async {
+            if (value.user != null) {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => EnterBasicInfo()),
+                  (route) => false);
+            }
+          });
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          print(e.message);
+        },
+        codeSent: (String? verficationID, int? resendToken) {
+          setState(() {
+            _verificationCode = verficationID;
+          });
+        },
+        codeAutoRetrievalTimeout: (String verificationID) {
+          setState(() {
+            _verificationCode = verificationID;
+          });
+        },
+        timeout: Duration(seconds: 120));
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _verifyPhone();
   }
 }

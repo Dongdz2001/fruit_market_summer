@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/controller/input_data/init_user.dart';
-import 'package:fruit_market_summer/model/icons_custom/my_flutter_app_icons.dart';
-import 'package:fruit_market_summer/views/group_views_2/login_screen/home_login_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/help/help_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/my_order/my_order_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/setting_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/controller/input_data/init_user.dart';
+import 'package:page_views/model/icons_custom/my_flutter_app_icons.dart';
+import 'package:page_views/views/group_views_2/login_screen/home_login_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/help/help_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/my_order/my_order_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/setting_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

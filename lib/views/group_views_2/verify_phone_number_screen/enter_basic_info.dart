@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/home_main_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_3/home_main_center/home_main_screen.dart';
 
 class EnterBasicInfo extends StatelessWidget {
   const EnterBasicInfo({Key? key}) : super(key: key);

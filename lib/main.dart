@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_1/page_views/onboarding_screen.dart';
-import 'package:fruit_market_summer/views/group_views_1/splash_screen/splashscreen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_1/page_views/onboarding_screen.dart';
+import 'package:page_views/views/group_views_1/splash_screen/splashscreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 }
 
 class MyApp extends StatelessWidget {

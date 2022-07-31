@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/controller/input_data/init_user.dart';
-import 'package:fruit_market_summer/model/credit_card/creditCard.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
-import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/pay_now_screen.dart';
-import 'package:fruit_market_summer/views/group_views_4/loading_pay/loading_verifyle_pay_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/controller/input_data/init_user.dart';
+import 'package:page_views/model/credit_card/creditCard.dart';
+import 'package:page_views/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
+import 'package:page_views/views/group_views_4/bill_payment_page/pay_now_screen.dart';
+import 'package:page_views/views/group_views_4/loading_pay/loading_verifyle_pay_screen.dart';
 
 class AddCardScreen extends StatefulWidget {
   const AddCardScreen({Key? key}) : super(key: key);

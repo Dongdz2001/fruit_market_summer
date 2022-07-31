@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
 
 class IntroPage3 extends StatefulWidget {
   const IntroPage3({Key? key}) : super(key: key);

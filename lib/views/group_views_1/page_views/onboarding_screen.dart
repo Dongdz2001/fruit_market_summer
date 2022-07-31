@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_1/page_views/intro_page_1.dart';
-import 'package:fruit_market_summer/views/group_views_1/page_views/intro_page_2.dart';
-import 'package:fruit_market_summer/views/group_views_1/page_views/intro_page_3.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_1/page_views/intro_page_1.dart';
+import 'package:page_views/views/group_views_1/page_views/intro_page_2.dart';
+import 'package:page_views/views/group_views_1/page_views/intro_page_3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:fruit_market_summer/views/group_views_2/login_screen/home_login_screen.dart';
+import 'package:page_views/views/group_views_2/login_screen/home_login_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

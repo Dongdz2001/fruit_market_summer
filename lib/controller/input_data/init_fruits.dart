@@ -1,4 +1,4 @@
-import 'package:fruit_market_summer/model/food_class/food.dart';
+import 'package:page_views/model/food_class/food.dart';
 
 // init Organic Fruits
 Food strawberries_Fruits = new Food("Strawberry", "Organic Fruits",

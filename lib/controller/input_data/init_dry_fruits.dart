@@ -1,4 +1,4 @@
-import 'package:fruit_market_summer/model/food_class/food.dart';
+import 'package:page_views/model/food_class/food.dart';
 
 // init Indehiscent Dry Fruit
 Food cashewnuts_Dry_Fruit = new Food("Cashewnuts", "Indehiscent Dry Fruit",

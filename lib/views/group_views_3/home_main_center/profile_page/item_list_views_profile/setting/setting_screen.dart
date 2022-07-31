@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/account_setting/account_setting_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/change_address_setting/change_address_setting_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/language_setting/language_setting_screen.dart';
-import 'package:fruit_market_summer/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/notification_setting/notification_setting_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/account_setting/account_setting_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/change_address_setting/change_address_setting_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/language_setting/language_setting_screen.dart';
+import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/item_menu_setting/notification_setting/notification_setting_screen.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);

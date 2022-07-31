@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/model/food_class/food.dart';
-import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/add_card_screen.dart';
-import 'package:fruit_market_summer/views/group_views_4/bill_payment_page/pay_now_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/model/food_class/food.dart';
+import 'package:page_views/views/group_views_4/bill_payment_page/add_card_screen.dart';
+import 'package:page_views/views/group_views_4/bill_payment_page/pay_now_screen.dart';
 import '../../../../controller/input_data/init_user.dart';
 import 'dart:math';
 

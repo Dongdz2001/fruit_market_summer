@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/input_verifyle.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/input_verifyle.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/loading_verifyle.dart';
 
 class KeyboradCustom {
   static Widget getWidget(
     TextEditingController _edtNumberController,
+    Widget widgetTemp,
+    BuildContext context,
   ) {
     return Column(
       children: [
@@ -162,10 +165,12 @@ class KeyboradCustom {
                     "assets/image_keyboard_button/delete.png"),
               ),
               onTap: () {
-                _edtNumberController.text = _edtNumberController.text
-                    .substring(0, _edtNumberController.text.length - 1);
-                _edtNumberController.selection = TextSelection.fromPosition(
-                    TextPosition(offset: _edtNumberController.text.length));
+                if (_edtNumberController.text.length > 0) {
+                  _edtNumberController.text = _edtNumberController.text
+                      .substring(0, _edtNumberController.text.length - 1);
+                  _edtNumberController.selection = TextSelection.fromPosition(
+                      TextPosition(offset: _edtNumberController.text.length));
+                }
               },
             ),
             SizedBox(
@@ -196,7 +201,10 @@ class KeyboradCustom {
                 child: Image.asset(
                     fit: BoxFit.contain, "assets/image_keyboard_button/ok.png"),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => widgetTemp));
+              },
             ),
           ],
         ),

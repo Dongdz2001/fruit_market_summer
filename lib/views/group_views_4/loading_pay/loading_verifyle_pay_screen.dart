@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fruit_market_summer/controller/gobal_variable_food/sizeDevice.dart';
-import 'package:fruit_market_summer/views/group_views_2/verify_phone_number_screen/finish_verifyle.dart';
-import 'package:fruit_market_summer/views/group_views_4/loading_pay/finish_verifyle_pay_screen.dart';
+import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/finish_verifyle.dart';
+import 'package:page_views/views/group_views_4/loading_pay/finish_verifyle_pay_screen.dart';
 import 'package:im_animations/im_animations.dart';
 
 class LoadingVerifylePayScreen extends StatefulWidget {

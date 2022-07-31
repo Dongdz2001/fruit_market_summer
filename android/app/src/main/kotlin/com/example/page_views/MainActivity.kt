@@ -1,4 +1,4 @@
-package com.example.page_views
+package com.example.fruit_market_summer
 
 import io.flutter.embedding.android.FlutterActivity
 

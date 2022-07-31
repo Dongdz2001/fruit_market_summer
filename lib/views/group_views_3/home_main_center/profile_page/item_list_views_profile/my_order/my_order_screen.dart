@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:fruit_market_summer/controller/input_data/init_user.dart';
+import 'package:page_views/controller/input_data/init_user.dart';
 
 import '../../../../../../controller/gobal_variable_food/sizeDevice.dart';
 import '../../../../../../controller/input_data/init_vegetable.dart';
