@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:page_views/controller/input_data/init_user.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:page_views/model/icons_custom/my_flutter_app_icons.dart';
 import 'package:page_views/views/group_views_2/login_screen/home_login_screen.dart';
 import 'package:page_views/views/group_views_3/home_main_center/favourite_page/favourite_screen.dart';
 import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/help/help_screen.dart';
 import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/my_order/my_order_screen.dart';
 import 'package:page_views/views/group_views_3/home_main_center/profile_page/item_list_views_profile/setting/setting_screen.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -239,13 +241,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       color: Colors.grey[300], height: heightDevice(0.002)),
                   // Log Out
                   InkWell(
-                    onTap: () => Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => HomeLoginScreen(),
-                      ),
-                      (route) => false,
-                    ),
+                    onTap: () async {
+                      GoogleSignIn _googleSignIn =
+                          GoogleSignIn(scopes: ['email']);
+                      await _googleSignIn.signOut();
+                     
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => HomeLoginScreen(),
+                        ),
+                        (route) => false,
+                      );
+                    },
                     child: Container(
                         alignment: Alignment.topCenter,
                         color: Colors.white,
@@ -269,4 +277,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+  // Future<void> signOut() async {
+  //   FacebookAuth
+  //   await _facebookLogin.logOut();
+  //   await _auth.signOut();
+  //   _user = null;
+  // }
 }

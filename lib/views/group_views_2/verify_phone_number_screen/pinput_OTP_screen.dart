@@ -15,6 +15,7 @@ class PinputOTPScreen extends StatefulWidget {
 
 class _PinputOTPScreenState extends State<PinputOTPScreen> {
   String? _verificationCode;
+  int? _mFortesndingToken;
   bool _flagverifyle = false;
   TextEditingController _edtNumberController = TextEditingController();
   @override
@@ -153,7 +154,7 @@ class _PinputOTPScreenState extends State<PinputOTPScreen> {
 
   _verifyPhone() async {
     await FirebaseAuth.instance.verifyPhoneNumber(
-        phoneNumber: '+1${widget.phone}',
+        phoneNumber: '+84${widget.phone.substring(1)}',
         verificationCompleted: (PhoneAuthCredential credential) async {
           await FirebaseAuth.instance
               .signInWithCredential(credential)
@@ -172,13 +173,15 @@ class _PinputOTPScreenState extends State<PinputOTPScreen> {
         codeSent: (String? verficationID, int? resendToken) {
           setState(() {
             _verificationCode = verficationID;
+            _mFortesndingToken = resendToken;
+            PhoneAuthCredential credential = PhoneAuthProvider.credential(
+                verificationId: verficationID.toString(), smsCode: '2784');
           });
         },
         codeAutoRetrievalTimeout: (String verificationID) {
-          setState(() {
-            _verificationCode = verificationID;
-          });
+          _verificationCode = verificationID;
         },
+        forceResendingToken: _mFortesndingToken,
         timeout: Duration(seconds: 120));
   }
 

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:page_views/controller/gobal_variable_food/sizeDevice.dart';
 import 'package:page_views/views/group_views_1/page_views/onboarding_screen.dart';
+import 'package:page_views/views/group_views_2/verify_phone_number_screen/enter_basic_info.dart';
 import 'package:page_views/views/group_views_2/verify_phone_number_screen/input_verifyle.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class HomeLoginScreen extends StatefulWidget {
   const HomeLoginScreen({Key? key}) : super(key: key);
@@ -13,15 +16,13 @@ class HomeLoginScreen extends StatefulWidget {
 
 class _HomeLoginScreenState extends State<HomeLoginScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String error = '';
-  String verificationId = '';
 
-  bool isLoading = false;
+  bool _isLoggedIn = false;
 
-  void setIsLoading() {
-    setState(() {
-      isLoading = !isLoading;
-    });
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
@@ -127,59 +128,57 @@ class _HomeLoginScreenState extends State<HomeLoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          side: BorderSide(
-                            width: 1.5,
-                            color: Colors.grey,
-                          )),
-                      child: SizedBox(
-                        width: witdthDevice(0.34),
-                        height: heightDevice(0.06),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: Image.asset("assets/icons/google.png"),
+                        style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            Text(
-                              "Login In with",
-                              style: Theme.of(context).textTheme.headline2,
-                            )
-                          ],
+                            side: BorderSide(
+                              width: 1.5,
+                              color: Colors.grey,
+                            )),
+                        child: SizedBox(
+                          width: witdthDevice(0.34),
+                          height: heightDevice(0.06),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Image.asset("assets/icons/google.png"),
+                              ),
+                              Text(
+                                "Login In with",
+                                style: Theme.of(context).textTheme.headline2,
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      onPressed: () {},
-                    ),
+                        onPressed: () async => _veryfireGoogle()),
                     OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          side: BorderSide(
-                            width: 1.5,
-                            color: Colors.grey,
-                          )),
-                      child: SizedBox(
-                        width: witdthDevice(0.34),
-                        height: heightDevice(0.06),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: Image.asset("assets/icons/facebook.png"),
+                        style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            Text(
-                              "Login In with",
-                              style: Theme.of(context).textTheme.headline2,
-                            )
-                          ],
+                            side: BorderSide(
+                              width: 1.5,
+                              color: Colors.grey,
+                            )),
+                        child: SizedBox(
+                          width: witdthDevice(0.34),
+                          height: heightDevice(0.06),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Image.asset("assets/icons/facebook.png"),
+                              ),
+                              Text(
+                                "Login In with",
+                                style: Theme.of(context).textTheme.headline2,
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      onPressed: () {},
-                    ),
+                        onPressed: () async => _signInWithFacebook()),
                   ],
                 ),
               ),
@@ -188,5 +187,37 @@ class _HomeLoginScreenState extends State<HomeLoginScreen> {
         ),
       ),
     );
+  }
+
+  // method Sign Google
+  Future<void> _veryfireGoogle() async {
+    GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+    await _googleSignIn.signIn();
+    GoogleSignInAccount? user = _googleSignIn.currentUser;
+    if (user != null) {
+      setState(() {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => EnterBasicInfo()));
+      });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Email or Password incorrect !')));
+    }
+  }
+
+  Future<void> _signInWithFacebook() async {
+    final LoginResult loginResult = await FacebookAuth.instance
+        .login(permissions: ['email', 'public_profile', 'user_birthday']);
+
+    final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(loginResult.accessToken!.token);
+    UserCredential user = await FirebaseAuth.instance
+        .signInWithCredential(facebookAuthCredential) as UserCredential;
+    if (user != null) {
+      setState(() {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => EnterBasicInfo()));
+      });
+    }
   }
 }
