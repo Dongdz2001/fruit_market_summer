@@ -195,6 +195,7 @@ class _HomeLoginScreenState extends State<HomeLoginScreen> {
     await _googleSignIn.signIn();
     GoogleSignInAccount? user = _googleSignIn.currentUser;
     if (user != null) {
+      print("id = ${user.id}");
       setState(() {
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => EnterBasicInfo()));

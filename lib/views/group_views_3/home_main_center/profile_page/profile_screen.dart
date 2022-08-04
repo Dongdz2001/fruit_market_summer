@@ -245,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       GoogleSignIn _googleSignIn =
                           GoogleSignIn(scopes: ['email']);
                       await _googleSignIn.signOut();
-                     
+                      await FacebookAuth.instance.logOut();
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
