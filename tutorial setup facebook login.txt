@@ -1,0 +1,16 @@
+
+      
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Admin\.android\debug.keystore" | "C:\Users\Admin\Downloads\bin\openssl" sha1 -binary | "C:\Users\Admin\Downloads\bin\openssl" base64
+      
+
+f/MvbI7gBAoFWCRC7j9EZZXHjHw=
+
+WgXsoBj9PxRvyWe95Wgltxyrk/s=
+
+com.example.fruit_market_summer
+
+com.example.fruit_market_summer.MainActivity
+
+https://app.termly.io/dashboard/website/aaeb0f08-9ba3-4bc0-91b7-9c879e13c6aa/privacy-policy
+
+https://www.freeprivacypolicy.com/live/6a9b96ac-471c-44b5-bc69-1543720d0d25
